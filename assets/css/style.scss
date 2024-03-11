@@ -285,14 +285,40 @@ li {
   .menu {
     @extend .d-flex;
     @extend .v-center;
+    padding: $half-spacing/2 0;
     li {
-      margin: 0 $spacing;
+      margin: 0 $half-spacing*3;
       a {
         @extend .uppercase;
         @extend .s-small;
         @include transition(color .3s);
+        position: relative;
         &:hover {
           color: $color3;
+          &:before {
+            background-color: $color1;
+          }
+        }
+        &:before {
+          content:'';
+          display: flex;
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          border: 1px solid $color1;
+          position: absolute;
+          left: - 30px;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: white;
+          @include transition(all .3s);
+        }
+      }
+      &.current-menu-item a {
+        color: $color3;
+        pointer-events: none;
+        &:before {
+          background-color: $color1;
         }
       }
     }
