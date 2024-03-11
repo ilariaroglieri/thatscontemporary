@@ -489,6 +489,7 @@ body {
 
 p {
   margin: 0;
+  margin-bottom: 20px;
   line-height: 1.3; }
 
 h1, h2, h3, h4 {
@@ -673,20 +674,22 @@ button {
   .donations .donation-tab {
     position: relative; }
     .donations .donation-tab .donation-text {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 0;
       -webkit-transition: opacity 0.3s;
       -moz-transition: opacity 0.3s;
       -ms-transition: opacity 0.3s;
       -o-transition: opacity 0.3s;
       transition: opacity 0.3s; }
-      .donations .donation-tab .donation-text:nth-of-type(2) {
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        height: 0; }
+      .donations .donation-tab .donation-text .wysiwyg {
+        max-width: 600px; }
       .donations .donation-tab .donation-text.visible {
         opacity: 1;
-        height: 100%; }
+        height: 100%;
+        position: static; }
   .donations .donation-button {
     cursor: pointer;
     position: relative;

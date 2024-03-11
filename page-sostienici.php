@@ -57,7 +57,7 @@
           </div>
 
           <div class="donation-tab d-seven-twelfth t-whole">
-            <div class="donation-text visible d-flex">
+            <div class="donation-text visible d-flex" data-tab="paypal">
               <div class="wysiwyg s-small">
                 <?= $singola['testo_donazione_paypal']; ?>
               </div>
@@ -65,7 +65,7 @@
               <button>Dona qui</button>
             </div>
 
-            <div class="donation-text">
+            <div class="donation-text" data-tab="bonifico">
               <div class="wysiwyg s-small">
                 <?= $singola['testo_donazione_bonifico']; ?>
               </div>
@@ -75,10 +75,10 @@
 
         <div class="border-top">
           <div class="flex-row d-flex">
-            <div class="donation-button active d-half s-small t-center">
+            <div class="donation-button active d-half s-small t-center" data-tab="paypal">
               <h3 class="uppercase"><?= $singola['titolo_donazione_paypal']; ?></h3>
             </div>
-            <div class="donation-button d-half s-small t-center">
+            <div class="donation-button d-half s-small t-center" data-tab="bonifico">
               <h3 class="uppercase"><?= $singola['titolo_donazione_bonifico']; ?></h3>
             </div>
           </div>

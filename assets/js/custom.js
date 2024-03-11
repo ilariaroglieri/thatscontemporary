@@ -54,6 +54,17 @@ jQuery(document).ready(function($) {
   });
 
 
+// --- sostienici tabs
+
+$('.donation-button').click(function() {
+  var val = $(this).attr('data-tab'); console.log(val);
+  $('.donation-button').removeClass('active');
+  $(this).addClass('active');
+
+  $('.donation-text').removeClass('visible'); 
+  $('.donation-text[data-tab='+ val +']').addClass('visible'); 
+})
+
 
 //----------END JQUERY -----------
 });
