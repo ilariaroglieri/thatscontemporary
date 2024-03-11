@@ -53,19 +53,6 @@ jQuery(document).ready(function($) {
     }
   });
 
-// --- slider init
-  $('.slider').slick({
-    arrows: false,
-    dots: false,
-    autoplay: true,
-    infinite: true,
-    pauseOnHover: false,
-    pauseOnFocus: false,
-    autoplaySpeed: 3000,
-    speed: 1000,
-    cssEase: 'ease',
-    useTransform: false
-  });
 
 
 //----------END JQUERY -----------

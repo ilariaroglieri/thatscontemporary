@@ -6,62 +6,134 @@ $tablet: 768px;
 $mobile: 640px;
 
 //colors
-$primaryColor: #7d4d66;
-$secColor: #7d4d66;
+$color1: #3D374A;
+$color2: #7d4d66;
+$color3: #be0dbd;
 
 // Typography
 @font-face {
-  font-family: 'Basis Grotesque';
-  src:url('assets/fonts/BasisGrotesque-Regular.woff2') format('woff2'),
-      url('assets/fonts/BasisGrotesque-Regular.woff') format('woff'),
-      url('assets/fonts/BasisGrotesque-Regular.ttf') format('ttf'),
-      url('assets/fonts/BasisGrotesque-Regular.svg') format('svg'),
-      url('assets/fonts/BasisGrotesque-Regular.eot') format('eot');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Basis Grotesque';
-  src:url('assets/fonts/BasisGrotesque-Italic.woff2') format('woff2'),
-      url('assets/fonts/BasisGrotesque-Italic.woff') format('woff'),
-      url('assets/fonts/BasisGrotesque-Italic.ttf') format('ttf'),
-      url('assets/fonts/BasisGrotesque-Italic.svg') format('svg'),
-      url('assets/fonts/BasisGrotesque-Italic.eot') format('eot');
-  font-weight: 400;
+  font-family: 'ITC New Baskerville Std';
+  src: url('../fonts/NewBaskervilleStd-Italic.eot');
+  src: url('../fonts/NewBaskervilleStd-Italic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/NewBaskervilleStd-Italic.woff2') format('woff2'),
+  url('../fonts/NewBaskervilleStd-Italic.woff') format('woff'),
+  url('../fonts/NewBaskervilleStd-Italic.svg#NewBaskervilleStd-Italic') format('svg');
+  font-weight: 500;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Basis Grotesque Mono';
-  src:url('assets/fonts/BasisGrotesqueMono-Regular.woff2') format('woff2'),
-      url('assets/fonts/BasisGrotesqueMono-Regular.woff') format('woff'),
-      url('assets/fonts/BasisGrotesqueMono-Regular.ttf') format('ttf'),
-      url('assets/fonts/BasisGrotesqueMono-Regular.svg') format('svg'),
-      url('assets/fonts/BasisGrotesqueMono-Regular.eot') format('eot');
+  font-family: 'ITC New Baskerville Std';
+  src: url('../fonts/NewBaskervilleStd-Roman.eot');
+  src: url('../fonts/NewBaskervilleStd-Roman.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/NewBaskervilleStd-Roman.woff2') format('woff2'),
+  url('../fonts/NewBaskervilleStd-Roman.woff') format('woff'),
+  url('../fonts/NewBaskervilleStd-Roman.svg#NewBaskervilleStd-Roman') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SempioneGrotesk';
+  src: url('../fonts/SempioneGrotesk-Light.eot');
+  src: url('../fonts/SempioneGrotesk-Light.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/SempioneGrotesk-Light.woff2') format('woff2'),
+  url('../fonts/SempioneGrotesk-Light.woff') format('woff'),
+  url('../fonts/SempioneGrotesk-Light.svg#SempioneGrotesk-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SempioneGrotesk';
+  src: url('../fonts/SempioneGrotesk-Regular.eot');
+  src: url('../fonts/SempioneGrotesk-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/SempioneGrotesk-Regular.woff2') format('woff2'),
+  url('../fonts/SempioneGrotesk-Regular.woff') format('woff'),
+  url('../fonts/SempioneGrotesk-Regular.svg#SempioneGrotesk-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SempioneGrotesk';
+  src: url('../fonts/SempioneGrotesk-Medium.eot');
+  src: url('../fonts/SempioneGrotesk-Medium.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/SempioneGrotesk-Medium.woff2') format('woff2'),
+  url('../fonts/SempioneGrotesk-Medium.woff') format('woff'),
+  url('../fonts/SempioneGrotesk-Medium.svg#SempioneGrotesk-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+.serif {
+  font-family: 'ITC New Baskerville Std', serif;
+}
+
+.sans {
+  font-family: 'SempioneGrotesk', sans-serif;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.reg {
   font-weight: 400;
 }
 
+.medium {
+  font-weight: 500;
+}
 
-.monospaced {
-  font-family: 'Basis Grotesque Mono';
+.italic {
+  font-style: italic;
 }
 
 .s-large { 
   font-size: 35px;
 }
 
+.s-xhuge {
+  font-size: 125px;
+}
+
+.s-huge {
+  font-size: 58px;
+}
+
+.s-big {
+  font-size: 50px;
+}
+
+.s-large {
+  font-size: 40px;
+}
+
 .s-medium { 
+  font-size: 30px;
+}
+
+.s-regular { 
   font-size: 24px;
 }
 
-.s-regular {
+.s-small {
+  font-size: 21px;
+}
+
+.s-xsmall {
 	font-size: 18px;
 }
 
-.s-small {
-  font-size: 14px;
+.s-xxsmall {
+  font-size: 15px;
 }
-
 
 // grid system
 $spacing: 20px;
@@ -149,11 +221,11 @@ $col: 8.3333%;
 }
 
 .spacing-b-3 {
-  margin-bottom: $double-spacing;
+  margin-bottom: $half-spacing*3;
 }
 
 .spacing-b-4 {
-  margin-bottom: $triple-spacing;
+  margin-bottom: $double-spacing;
 }
 
 .spacing-t-1 {
@@ -165,11 +237,11 @@ $col: 8.3333%;
 }
 
 .spacing-t-3 {
-  margin-top: $double-spacing;
+  margin-top: $half-spacing*3;
 }
 
 .spacing-t-4 {
-  margin-top: $triple-spacing;
+  margin-top: $double-spacing;
 }
 
 // padding
@@ -186,11 +258,11 @@ $col: 8.3333%;
 }
 
 .spacing-p-b-3 {
-  padding-bottom: $double-spacing;
+  padding-bottom: $half-spacing*3;
 }
 
 .spacing-p-b-4 {
-  padding-bottom: $triple-spacing;
+  padding-bottom: $double-spacing;
 }
 
 .spacing-p-t-half {
@@ -206,11 +278,11 @@ $col: 8.3333%;
 }
 
 .spacing-p-t-3 {
-  padding-top: $double-spacing;
+  padding-top: $half-spacing*3;
 }
 
 .spacing-p-t-4 {
-  padding-top: $triple-spacing;
+  padding-top: $double-spacing;
 }
 
 @media screen and (max-width: $tablet) {

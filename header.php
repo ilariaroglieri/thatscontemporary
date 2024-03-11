@@ -21,10 +21,8 @@
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>"/>
 		<link rel="shortcut icon" href="<?php echo home_url( '/favicon.ico' ); ?>">
 
-
 		<link rel="stylesheet" href="<?php echo home_url( '/assets/css/style.css' ); ?>" type="text/css">	
 
-		<!-- <?php wp_enqueue_script("jquery"); ?>	 -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
 		<?php wp_head(); ?>
@@ -32,13 +30,19 @@
 	</head>
 
 	<body <?php body_class(); ?>>
-		<div id="container">
+
+		<div id="club-thats" class="p-fixed">
+			<a class="serif s-small italic uppercase" href="<?php echo get_page_link(16); ?>">
+				<?php _e("Unisciti alla community, iscriviti al Club That's!", 'thats-theme'); ?>
+			</a>
+		</div>
+
+		<div class="container spacing-t-3 spacing-p-b-4">
 			<div id="header">
 				<div id="logo">
-					<h2 class="site-name">
-						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?>
-						</a>
-					</h2>
+					<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+						<?php include('assets/img/thats_contemporary_logo.svg'); ?>
+					</a>
 				</div>
 
 				<button class="menu-toggle d-none">menu
@@ -48,3 +52,6 @@
 				</button>
 				<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
 			</div>
+		</div>
+
+		<?php include('menu.php'); ?>

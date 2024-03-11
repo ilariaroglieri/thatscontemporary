@@ -114,17 +114,17 @@ Version: 1.0
   text-transform: uppercase;
 }
 
-.primaryColor {
-  color: $primaryColor;
+.color1 {
+  color: $color1;
 }
 
-.secColor {
-  color: $secColor;
+.color2 {
+  color: $color2;
 }
 
 .wysiwyg {
-  &.secColor * {
-    @extend .secColor;
+  &.color2 * {
+    @extend .color2;
   }
   &.s-small * {
     @extend .s-small;
@@ -135,13 +135,17 @@ Version: 1.0
   max-width: 500px;
 }
 
+.border-bottom {
+  border-bottom: 1px solid $color1;
+}
+
 
 /* basic elements */
 body {
-  font-family: 'Arial', sans-serif;
-  color: $primaryColor;
+  @extend .sans;
+  color: $color1;
   overflow-x: hidden;
-  line-height: 1.3;
+  text-rendering: geometricPrecision;
 }
 
 p {
@@ -154,11 +158,10 @@ h1, h2, h3, h4 {
 }
 
 a {
-  color:$primaryColor;
+  color:$color1;
   text-decoration: none;
   &:hover {
-    color: $primaryColor;
-    border-bottom: 1px solid;
+    color: $color1;
   }
 }
 
@@ -172,9 +175,9 @@ li {
 }
 
 .container {
-  width: $desktop;
-  margin-left: auto;
-  margin-right: auto;
+  width: calc(100% - $spacing*6);
+  margin-left: $half-spacing*3;
+  margin-right: $half-spacing*3;
 }
 
 .container-fluid {
@@ -189,32 +192,28 @@ li {
   position: relative;
 }
 
-#header-container {
-  position: fixed;
-  z-index: 100;
+#club-thats {
+  width: 100%;
+  top:0;
+  left: 0;
+  padding-top: $half-spacing/2;
+  background-color: #eafdd0;
+  text-align: center;
 }
+
 #header {
-  margin-top:$spacing;
-  div[class*="menu-1"]{
-    opacity: 0;
-    width: 100%;
-    position: fixed;
-    top: -100%;
-    left: 0;
-    z-index:99;
-    background-color: white;
-    padding-top: $fourfold-spacing;
-    @include transition(all .5s);
-    &.active {
-      opacity: 1;
-      top: 0;
-    }
-    ul li {
-      text-align: center;
-      margin-bottom: $half-spacing;
+  #logo {
+    width: 33vw;
+    svg {
+      width: 100%;
+      fill: $color1;
     }
   }
+  div[class*="menu-1"]{
+    display: none;
+  }
   .menu-toggle {
+    display: none;
     border: 1px solid transparent;
     width: 30px;
     height: 30px;
@@ -230,12 +229,11 @@ li {
     background: transparent;
     opacity: 1;
     cursor: pointer;
-    display: flex;
     span {
       position: absolute;
       height: 2px;
       width: 30px;
-      background: $primaryColor;
+      background: $color1;
       opacity: 1;
       -webkit-transform: rotate(0deg);
       -moz-transform: rotate(0deg);
@@ -278,3 +276,27 @@ li {
     }
   }
 }
+
+#site-menu {
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid $color1;
+  .menu {
+    @extend .d-flex;
+    @extend .v-center;
+    li {
+      margin: 0 $spacing;
+      a {
+        @extend .uppercase;
+        @extend .s-small;
+        @include transition(color .3s);
+        &:hover {
+          color: $color3;
+        }
+      }
+    }
+  }
+}
+
+@import 'media-queries';
