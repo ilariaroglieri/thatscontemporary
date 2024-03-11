@@ -410,6 +410,8 @@ Version: 1.0
     justify-content: flex-end; }
   .d-flex.space-between, #site-menu .space-between.menu {
     justify-content: space-between; }
+  .d-flex.space-evenly, #site-menu .space-evenly.menu {
+    justify-content: space-evenly; }
   .d-flex.wrap, #site-menu .wrap.menu {
     flex-wrap: wrap; }
   .d-flex.grow, #site-menu .grow.menu {
