@@ -461,6 +461,9 @@ Version: 1.0
 .max-width {
   max-width: 500px; }
 
+.border-top {
+  border-top: 1px solid #3D374A; }
+
 .border-bottom {
   border-bottom: 1px solid #3D374A; }
 
