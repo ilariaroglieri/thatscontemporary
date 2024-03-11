@@ -8,6 +8,8 @@ show_admin_bar(false);
 
 function register_my_menu() {
 	register_nav_menu('header-menu',__( 'Header Menu' ));
+  register_nav_menu('social-menu',__( 'Social Menu' ));
+  register_nav_menu('policies-menu',__( 'Policies Menu' ));
 }
 
 add_action( 'init', 'register_my_menu' );
