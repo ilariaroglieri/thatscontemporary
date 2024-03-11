@@ -150,6 +150,7 @@ Version: 1.0
 /* basic elements */
 body {
   @extend .sans;
+  @extend .light;
   color: $color1;
   overflow-x: hidden;
   text-rendering: geometricPrecision;
@@ -183,7 +184,7 @@ li {
 }
 
 .container {
-  width: calc(100% - $spacing*6);
+  width: calc(100% - #{$spacing*3});
   margin-left: $half-spacing*3;
   margin-right: $half-spacing*3;
 }
@@ -247,6 +248,7 @@ li {
   background-color: #eafdd0;
   text-align: center;
   animation: bgcolor 20s linear 0s infinite normal forwards;
+  z-index: 100;
 }
 
 #header {
@@ -377,6 +379,61 @@ li {
 
 .content {
   min-height: 100vh;
+}
+
+button {
+  border: none;
+  background-color: #cecece;
+  width: 45vw;
+  height: 4vh;
+  margin: 0 $half-spacing*3;
+  @extend .sans;
+  @extend .uppercase;
+  @extend .italic;
+  @extend .s-small;
+}
+
+// donazioni
+.donations {
+  background-color: #E6F499;
+  .donation-tab {
+    position: relative;
+    .donation-text {
+      @include transition(opacity .3s);
+      &:nth-of-type(2) {
+        position: absolute;
+        top:0;
+        left: 0;
+        opacity: 0;
+        height: 0;
+      }
+      &.visible {
+        opacity: 1;
+        height: 100%
+      }
+    }
+  }
+  .donation-button {
+    cursor: pointer;
+    position: relative;
+    @include transition(all .3s);
+    &:hover {
+      color: $color3;
+    }
+    &.active {
+      color: $color3;
+      cursor: default;
+    }
+    &:nth-of-type(1):after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -$half-spacing;
+      width: 1px;
+      height: 100%;
+      background-color: $color1;
+    }
+  }
 }
 
 #footer-title {

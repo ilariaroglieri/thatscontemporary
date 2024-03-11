@@ -7,7 +7,7 @@ $mobile: 640px;
 
 //colors
 $color1: #3D374A;
-$color2: #7d4d66;
+$color2: #8df2A8;
 $color3: #be0dbd;
 
 // Typography
@@ -113,18 +113,22 @@ $color3: #be0dbd;
 
 .s-large {
   font-size: 40px;
+  font-size: 2.4vw;
 }
 
 .s-medium { 
   font-size: 30px;
+  font-size: 1.8vw;
 }
 
 .s-regular { 
   font-size: 24px;
+  font-size: 1.5vw;
 }
 
 .s-small {
   font-size: 21px;
+  font-size: 1.3vw;
 }
 
 .s-xsmall {
@@ -185,8 +189,18 @@ $col: 8.3333%;
   margin: 0 #{$half-spacing};
 }
 
+.d-five-twelfth {
+  width: calc(#{$col}*5 - #{$spacing});
+  margin: 0 #{$half-spacing};
+}
+
 .d-six-twelfth {
   width: calc(#{$col}*6 - #{$spacing});
+  margin: 0 #{$half-spacing};
+}
+
+.d-seven-twelfth {
+  width: calc(#{$col}*7 - #{$spacing});
   margin: 0 #{$half-spacing};
 }
 
