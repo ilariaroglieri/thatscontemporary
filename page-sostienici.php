@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section class="content" id="content-generic">
+<section class="content" id="content-sostienici">
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
     <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -53,16 +53,20 @@
       <div class="donations container border-top spacing-b-4">
         <div class="flex-row d-flex spacing-p-t-2 spacing-p-b-2">
           <div class="d-five-twelfth t-whole">
-            <h2 class="s-large uppercase"><?= $singola['donazione_singola_-_titolo_sezione']; ?></h2>
+            <h2 class="donation-title s-large uppercase"><?= $singola['donazione_singola_-_titolo_sezione']; ?></h2>
           </div>
 
           <div class="donation-tab d-seven-twelfth t-whole">
-            <div class="donation-text visible d-flex" data-tab="paypal">
-              <div class="wysiwyg s-small">
-                <?= $singola['testo_donazione_paypal']; ?>
+            <div class="donation-text baseline visible d-flex t-column" data-tab="paypal">
+              <div class="d-two-thirds t-whole">
+                <div class="wysiwyg s-small">
+                  <?= $singola['testo_donazione_paypal']; ?>
+                </div>
               </div>
 
-              <button>Dona qui</button>
+              <div class="d-one-third t-whole">
+                <a href="#" class="button" role="button">Dona qui</a>
+              </div>
             </div>
 
             <div class="donation-text" data-tab="bonifico">
@@ -76,11 +80,34 @@
         <div class="border-top">
           <div class="flex-row d-flex">
             <div class="donation-button active d-half s-small t-center" data-tab="paypal">
-              <h3 class="uppercase"><?= $singola['titolo_donazione_paypal']; ?></h3>
+              <h3 class="s-xsmall light uppercase"><?= $singola['titolo_donazione_paypal']; ?></h3>
             </div>
             <div class="donation-button d-half s-small t-center" data-tab="bonifico">
-              <h3 class="uppercase"><?= $singola['titolo_donazione_bonifico']; ?></h3>
+              <h3 class="s-xsmall light uppercase"><?= $singola['titolo_donazione_bonifico']; ?></h3>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="donations container border-top spacing-t-4 spacing-b-4">
+        <div class="flex-row d-flex spacing-p-t-2 spacing-p-b-2">
+          <div class="d-five-twelfth t-whole">
+            <h2 class="donation-title s-large uppercase"><?= $partnership['titolo_donazione_partner']; ?></h2>
+          </div>
+
+          <div class="donation-tab d-seven-twelfth t-whole">
+            <div class="donation-text baseline visible d-flex t-column">
+              <div class="d-two-thirds t-whole">
+                <div class="wysiwyg s-small">
+                  <?= $partnership['testo_donazione_partner']; ?>
+                </div>
+              </div>
+
+              <div class="d-one-third t-whole">
+                <a href="mailto:amministrazione@thatscontemporary.com" class="button" role="button">Contattaci qui</a>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

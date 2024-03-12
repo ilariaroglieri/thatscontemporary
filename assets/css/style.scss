@@ -126,12 +126,26 @@ Version: 1.0
 }
 
 .wysiwyg {
-  &.color2 * {
-    @extend .color2;
+  &.s-large * {
+    @extend .s-large;
+  }
+  &.s-medium * {
+    @extend .s-medium;
+  }
+  &.s-regular * {
+    @extend .s-regular;
   }
   &.s-small * {
     @extend .s-small;
   }
+  &.s-xsmall * {
+    @extend .s-xsmall;
+  }
+}
+
+.two-columns {
+  columns: 2;
+  column-gap: $spacing;
 }
 
 .max-width {
@@ -160,6 +174,9 @@ p {
 	margin:0;
   margin-bottom: $spacing;
   line-height: 1.3;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 h1, h2, h3, h4 {
@@ -380,23 +397,71 @@ li {
 
 .content {
   min-height: 100vh;
+  margin-bottom: $double-spacing*3;
 }
 
-button {
+.button {
   border: none;
   background-color: #cecece;
-  width: 45vw;
-  height: 4vh;
-  margin: 0 $half-spacing*3;
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
   @extend .sans;
   @extend .uppercase;
   @extend .italic;
   @extend .s-small;
+  @include transition(color .3s);
+  &:hover {
+    color: $color3;
+  }
+}
+
+// stacked gallery
+.stacked_gallery {
+  position: relative;
+  display: flex;
+  flex: 1 1 0;
+  .stacked_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    &.active {
+      opacity: 1;
+    }
+    &.horizontal {
+      img {
+        width: 50%;
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
 }
 
 // donazioni
 .donations {
   background-color: #E6F499;
+  .donation-title {
+    margin-left: 80px;
+    position: relative;
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background-color: $color1;
+      border-radius: 50%;
+      position: absolute;
+      left: -65px;
+    }
+  }
   .donation-tab {
     position: relative;
     .donation-text {
@@ -405,14 +470,17 @@ button {
       top:0;
       left: 0;
       height: 0;
+      pointer-events: none;
       @include transition(opacity .3s);
       .wysiwyg {
         max-width: 600px;
+        margin-right: $spacing;
       }
       &.visible {
         opacity: 1;
         height: 100%;
         position: static;
+        pointer-events: all;
       }
     }
   }

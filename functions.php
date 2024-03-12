@@ -47,7 +47,6 @@ function add_slug_body_class( $classes ) {
 add_filter( 'body_class', 'add_slug_body_class' );
 
 // img attachment defaults
-
 function default_attachment_display_settings() {
     update_option( 'image_default_link_type', 'none' );
     update_option( 'image_default_size', 'full' );
@@ -76,9 +75,9 @@ function my_custom_wysiwyg() {
     .acf-gallery {
     	height: 200px !important;
     }
-    .wp-editor-area {
-    	height: 70px !important;
-    }
+    // .wp-editor-area {
+    // 	height: 70px !important;
+    // }
   </style>';
 }
 

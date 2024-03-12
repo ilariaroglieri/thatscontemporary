@@ -13,8 +13,6 @@ function checkScroll() {
 //-----------DOCUMENT.READY----------------
 
 jQuery(document).ready(function($) {
-
-// --- header behaviour
 	
   // scroll events
   var prevScrollPos = $(window).scrollTop();
@@ -23,18 +21,18 @@ jQuery(document).ready(function($) {
 
     var currentScrollPos = $(window).scrollTop();
     if (prevScrollPos > currentScrollPos && prevScrollPos > 0) {
-	    $('#logo').addClass('visible')
-	  } else {
-	    $('#logo').removeClass('visible')
-	  }
+      $('#logo').addClass('visible')
+    } else {
+      $('#logo').removeClass('visible')
+    }
 
-	  prevScrollPos = currentScrollPos;
+    prevScrollPos = currentScrollPos;
   });
 
   checkScroll();
 
 
-// --- Hamburger menu
+  // --- Hamburger menu
   $('.menu-toggle').click(function() {
     $(this).toggleClass('open');
     $('div[class*="menu-1"]').toggleClass('active');
@@ -53,17 +51,38 @@ jQuery(document).ready(function($) {
     }
   });
 
+  // --- stacked galleries
 
-// --- sostienici tabs
+  var imgs = $('.stacked_gallery ').find('.stacked_img');
+  var timer;
+  var j = 0;
 
-$('.donation-button').click(function() {
-  var val = $(this).attr('data-tab'); console.log(val);
-  $('.donation-button').removeClass('active');
-  $(this).addClass('active');
+  function activeLoop(el) {
+    $(el[j]).addClass('active');
+    if (j >= el.length) {
+      $(el).removeClass('active');
+      $(el[0]).addClass('active');
+      j = 0;
+    }
+    j++;
+  }
 
-  $('.donation-text').removeClass('visible'); 
-  $('.donation-text[data-tab='+ val +']').addClass('visible'); 
-})
+  if (imgs.length > 1) {
+    activeLoop(imgs);
+    timer = setInterval(function() {
+      activeLoop(imgs);
+    }, 300);
+  }
+
+  // --- sostienici tabs
+  $('.donation-button').click(function() {
+    var val = $(this).attr('data-tab'); console.log(val);
+    $('.donation-button').removeClass('active');
+    $(this).addClass('active');
+
+    $('.donation-text').removeClass('visible'); 
+    $('.donation-text[data-tab='+ val +']').addClass('visible'); 
+  })
 
 
 //----------END JQUERY -----------
