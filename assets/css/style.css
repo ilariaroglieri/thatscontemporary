@@ -1,8 +1,3 @@
-/*   
-Theme Name: Archivio Luciano Caruso Theme
-Author: Ilaria roglieri
-Version: 1.0
-*/
 @font-face {
   font-family: 'ITC New Baskerville Std';
   src: url("../fonts/NewBaskervilleStd-Italic.eot");
@@ -694,15 +689,23 @@ ul {
     height: 100%;
     width: 100%;
     text-align: center;
-    opacity: 0; }
+    opacity: 0;
+    background-repeat: no-repeat;
+    background-position: center; }
     .stacked_gallery .stacked_img.active {
       opacity: 1; }
-    .stacked_gallery .stacked_img.horizontal img {
-      width: 50%; }
-    .stacked_gallery .stacked_img img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain; }
+    .stacked_gallery .stacked_img.horizontal.size1 {
+      background-size: 80%; }
+    .stacked_gallery .stacked_img.horizontal.size2 {
+      background-size: 60%; }
+    .stacked_gallery .stacked_img.horizontal.size3 {
+      background-size: 40%; }
+    .stacked_gallery .stacked_img.vertical.size1 {
+      background-size: auto 100%; }
+    .stacked_gallery .stacked_img.vertical.size2 {
+      background-size: auto 70%; }
+    .stacked_gallery .stacked_img.vertical.size3 {
+      background-size: auto 60%; }
 
 .donations {
   background-color: #E6F499; }

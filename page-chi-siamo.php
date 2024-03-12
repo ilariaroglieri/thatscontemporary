@@ -24,9 +24,10 @@
                   <?php 
                     list($width, $height) = getimagesize($image['url']);
                     $orientation = ($width > $height) ? 'horizontal' : 'vertical';
+                    $size = ['size1','size2','size3'];
+                    $randSize = $size[array_rand($size)];
                   ?>
-                  <div class="stacked_img <?= $orientation; ?> <?php if ($i == 0):?>active<?php endif; ?>" >
-                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                  <div class="stacked_img <?= $randSize; ?> <?= $orientation; ?> <?php if ($i == 0):?>active<?php endif; ?>" style="background-image: url('<?= esc_url($image['url']); ?>');">
                   </div>
                 <?php endforeach; ?>
               </div>
