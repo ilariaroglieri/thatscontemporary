@@ -483,6 +483,12 @@ li {
       width: 100%;
       pointer-events: none;
       @include transition(opacity .3s);
+      .team-img {
+        aspect-ratio: 1/1.5;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
       blockquote {
         margin-bottom: $spacing;
         p {
@@ -491,7 +497,7 @@ li {
       }
       &.active {
         opacity: 1;
-        height: 100%;
+        height: initial;
         position: static;
         pointer-events: all;
       }

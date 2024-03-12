@@ -74,15 +74,26 @@ jQuery(document).ready(function($) {
     }, 300);
   }
 
+  // --- team tabs
+  $('.team-name').click(function() {
+    var val = $(this).attr('data-id'); 
+    $('.team-name').removeClass('active');
+    $(this).addClass('active');
+
+    $('.team-profile').removeClass('active'); 
+    $('.team-profile[data-id='+ val +']').addClass('active'); 
+  });
+
+
   // --- sostienici tabs
   $('.donation-button').click(function() {
-    var val = $(this).attr('data-tab'); console.log(val);
+    var val = $(this).attr('data-tab');
     $('.donation-button').removeClass('active');
     $(this).addClass('active');
 
     $('.donation-text').removeClass('visible'); 
     $('.donation-text[data-tab='+ val +']').addClass('visible'); 
-  })
+  });
 
 
 //----------END JQUERY -----------

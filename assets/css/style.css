@@ -759,11 +759,16 @@ ul {
   -ms-transition: opacity 0.3s;
   -o-transition: opacity 0.3s;
   transition: opacity 0.3s; }
+  #info-section .team.box .team-profile .team-img {
+    aspect-ratio: 1/1.5;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; }
   #info-section .team.box .team-profile blockquote {
     margin-bottom: 20px; }
   #info-section .team.box .team-profile.active {
     opacity: 1;
-    height: 100%;
+    height: initial;
     position: static;
     pointer-events: all; }
 #info-section .info-title {

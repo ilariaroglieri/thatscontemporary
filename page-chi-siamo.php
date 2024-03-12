@@ -47,34 +47,39 @@
             <?php while( have_rows('info_boxes') ) : the_row(); ?>
               <?php 
                 $team = get_sub_field('is_team_box'); 
+                $boxName = get_sub_field('box_title');
                 $w = $team == 0 ? 'd-half' : 'd-whole';
+                $w = $boxName == 'Partners' ? 's-small' : 's-regular'; 
               ?>
 
               <?php if ($team == 0): ?>
-                <div class="box d-half t-whole d-flex m-column">
+                <div data-id="<?= slugify($boxName); ?>" class="box d-half t-whole d-flex m-column">
 
                   <div class="info-title d-half m-whole">
                     <h2 class="s-regular uppercase reg"><?= the_sub_field('box_title'); ?></h2>
                   </div>
 
                   <div class="d-half m-whole">
-                    <div class="wysiwyg s-regular reg">
+                    <div class="wysiwyg <?= $w; ?> reg">
                       <?= the_sub_field('box_text'); ?>
                     </div>
                   </div>
 
                 </div>
               <?php else: ?>
-                <div class="team box d-flex m-column">
+                <div data-id="<?= slugify($boxName); ?>" class="team box d-flex m-column">
 
                   <div class="d-half m-whole d-flex">
                     <div class="info-title d-half">
-                      <h2 class="s-regular uppercase reg"><?= the_sub_field('box_title'); ?></h2>
+                      <h2 class="s-regular uppercase reg"><?= $boxName; ?></h2>
                     </div>
 
                     <div class="team-list d-half">
-                      <?php if( have_rows('team_boxes') ): $j = 0; while( have_rows('team_boxes') ) : the_row(); $j++; ?>
-                        <h3 class="team-name <?php if ($j == 1):?>active<?php endif; ?> s-regular uppercase reg"><?= the_sub_field('team_name'); ?></h3>
+                      <?php if( have_rows('team_boxes') ): $j = 0; while( have_rows('team_boxes') ) : the_row(); 
+                        $j++; 
+                        $teamName = get_sub_field('team_name');
+                        ?>
+                        <h3 data-id="<?= slugify($teamName); ?>" class="team-name <?php if ($j == 1):?>active<?php endif; ?> s-regular uppercase reg"><?= $teamName; ?></h3>
                         <h4 class="team-subtitle s-regular reg spacing-b-2"><?= the_sub_field('team_subtitle'); ?></h4>
                       <?php endwhile; endif; ?>
                     </div>
@@ -83,10 +88,11 @@
                   <div class="d-half m-whole">
                     <?php if( have_rows('team_boxes') ): $k = 0; while( have_rows('team_boxes') ) : the_row(); $k++;
                       $img = get_sub_field('team_portrait');
+                      $teamName = get_sub_field('team_name');
                       ?>
 
-                      <div class="team-profile <?php if ($k == 1):?>active<?php endif; ?> d-flex m-column">
-                        <div class="d-half m-whole" style="background-image: url('<?= esc_url($img['url']); ?>');"></div>
+                      <div data-id="<?= slugify($teamName); ?>" class="team-profile <?php if ($k == 1):?>active<?php endif; ?> d-flex m-column">
+                        <div class="team-img d-half m-whole" style="background-image: url('<?= esc_url($img['url']); ?>');"></div>
                         <div class="d-half m-whole">
                           <div class="wysiwyg s-xsmall reg">
                             <?= the_sub_field('team_bio'); ?>
