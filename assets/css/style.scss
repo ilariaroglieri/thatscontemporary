@@ -120,19 +120,19 @@
 }
 
 .wysiwyg {
-  &.s-large * {
+  &.s-large > * {
     @extend .s-large;
   }
-  &.s-medium * {
+  &.s-medium > * {
     @extend .s-medium;
   }
-  &.s-regular * {
+  &.s-regular > * {
     @extend .s-regular;
   }
-  &.s-small * {
+  &.s-small > * {
     @extend .s-small;
   }
-  &.s-xsmall * {
+  &.s-xsmall > * {
     @extend .s-xsmall;
   }
 }
@@ -430,13 +430,13 @@ li {
     }
     &.horizontal {
       &.size1 {
-        background-size: 80%;
+        background-size: auto 80%;
       }
       &.size2 {
-        background-size: 60%;
+        background-size: auto 60%;
       }
       &.size3 {
-        background-size: 40%;
+        background-size: auto 40%;
       }
     }
     &.vertical {
@@ -449,6 +449,69 @@ li {
       &.size3 {
         background-size: auto 60%;
       }
+    }
+  }
+}
+
+// info & team
+#info-section {
+  .box {
+    margin-bottom: $double-spacing*2;
+  }
+  .team.box {
+    h2, h3 {
+      line-height: 1.3;
+      display: inline-block;
+    }
+    .team-name {
+      cursor: pointer;
+      border-bottom: 1px solid transparent;
+      @include transition(all .3s);
+      &:hover, &.active {
+        border-bottom: 1px solid;
+      }
+      &.active {
+        cursor: default;
+      }
+    }
+    .team-profile {
+      opacity: 0;
+      position: absolute;
+      top:0;
+      left: 0;
+      height: 0;
+      width: 100%;
+      pointer-events: none;
+      @include transition(opacity .3s);
+      blockquote {
+        margin-bottom: $spacing;
+        p {
+          @extend .s-regular;
+        }
+      }
+      &.active {
+        opacity: 1;
+        height: 100%;
+        position: static;
+        pointer-events: all;
+      }
+    }
+  }
+  .info-title {
+    position: relative;
+    h2 {
+      max-width: calc(100% - 100px);
+    }
+    &:after {
+      content:'';
+      display: inline-block;
+      position: absolute;
+      top:0;
+      right: 30px;
+      width: 30px;
+      height: 60px;
+      background: url('../img/tc_dots.svg') no-repeat center center;
+      background-size: contain;    
     }
   }
 }

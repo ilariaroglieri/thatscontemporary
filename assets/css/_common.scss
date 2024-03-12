@@ -133,10 +133,12 @@ $color3: #be0dbd;
 
 .s-xsmall {
 	font-size: 18px;
+  font-size: 1.1vw;
 }
 
 .s-xxsmall {
   font-size: 15px;
+  font-size: 1vw;
 }
 
 // grid system
@@ -157,6 +159,11 @@ $col: 8.3333%;
 .d-half {
   width: calc(#{$col}*6 - #{$spacing});
   margin: 0 #{$half-spacing};
+  .d-half {
+    width: $col*6;
+    margin: 0;
+    padding: 0 #{$half-spacing};
+  }
 }
 
 .d-two-thirds{
@@ -167,6 +174,11 @@ $col: 8.3333%;
 .d-whole {
   width: calc(100% - #{$spacing});
   margin: 0 #{$half-spacing};
+  .d-half {
+    width: $col*6;
+    margin: 0;
+    padding: 0 #{$half-spacing};
+  }
 }
 
 .d-one-twelfth {
@@ -242,6 +254,14 @@ $col: 8.3333%;
   margin-bottom: $double-spacing;
 }
 
+.spacing-b-8 {
+  margin-bottom: $double-spacing*2;
+}
+
+.spacing-b-12 {
+  margin-bottom: $double-spacing*3;
+}
+
 .spacing-t-1 {
   margin-top: $half-spacing;
 }
@@ -256,6 +276,14 @@ $col: 8.3333%;
 
 .spacing-t-4 {
   margin-top: $double-spacing;
+}
+
+.spacing-t-8 {
+  margin-top: $double-spacing*2;
+}
+
+.spacing-t-12 {
+  margin-top: $double-spacing*3;
 }
 
 // padding

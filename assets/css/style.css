@@ -51,7 +51,7 @@
 .italic, .button {
   font-style: italic; }
 
-.s-large, .wysiwyg.s-large * {
+.s-large, .wysiwyg.s-large > * {
   font-size: 35px; }
 
 .s-xhuge {
@@ -63,27 +63,29 @@
 .s-big {
   font-size: 50px; }
 
-.s-large, .wysiwyg.s-large * {
+.s-large, .wysiwyg.s-large > * {
   font-size: 40px;
   font-size: 2.4vw; }
 
-.s-medium, .wysiwyg.s-medium * {
+.s-medium, .wysiwyg.s-medium > * {
   font-size: 30px;
   font-size: 1.8vw; }
 
-.s-regular, .wysiwyg.s-regular * {
+.s-regular, .wysiwyg.s-regular > *, #info-section .team.box .team-profile blockquote p {
   font-size: 24px;
   font-size: 1.5vw; }
 
-.s-small, .wysiwyg.s-small *, #site-menu .menu li a, .button {
+.s-small, .wysiwyg.s-small > *, #site-menu .menu li a, .button {
   font-size: 21px;
   font-size: 1.3vw; }
 
-.s-xsmall, .wysiwyg.s-xsmall *, #footer .menu li a {
-  font-size: 18px; }
+.s-xsmall, .wysiwyg.s-xsmall > *, #footer .menu li a {
+  font-size: 18px;
+  font-size: 1.1vw; }
 
 .s-xxsmall {
-  font-size: 15px; }
+  font-size: 15px;
+  font-size: 1vw; }
 
 .d-one-third {
   width: calc(8.3333%*4 - 20px);
@@ -92,6 +94,10 @@
 .d-half {
   width: calc(8.3333%*6 - 20px);
   margin: 0 10px; }
+  .d-half .d-half {
+    width: 49.9998%;
+    margin: 0;
+    padding: 0 10px; }
 
 .d-two-thirds {
   width: calc(8.3333%*8 - 20px);
@@ -100,6 +106,10 @@
 .d-whole {
   width: calc(100% - 20px);
   margin: 0 10px; }
+  .d-whole .d-half {
+    width: 49.9998%;
+    margin: 0;
+    padding: 0 10px; }
 
 .d-one-twelfth {
   width: calc(8.3333% - 20px);
@@ -157,6 +167,12 @@
 .spacing-b-4 {
   margin-bottom: 40px; }
 
+.spacing-b-8 {
+  margin-bottom: 80px; }
+
+.spacing-b-12 {
+  margin-bottom: 120px; }
+
 .spacing-t-1 {
   margin-top: 10px; }
 
@@ -168,6 +184,12 @@
 
 .spacing-t-4 {
   margin-top: 40px; }
+
+.spacing-t-8 {
+  margin-top: 80px; }
+
+.spacing-t-12 {
+  margin-top: 120px; }
 
 .spacing-p-b-half {
   padding-bottom: 5px; }
@@ -695,17 +717,69 @@ ul {
     .stacked_gallery .stacked_img.active {
       opacity: 1; }
     .stacked_gallery .stacked_img.horizontal.size1 {
-      background-size: 80%; }
+      background-size: auto 80%; }
     .stacked_gallery .stacked_img.horizontal.size2 {
-      background-size: 60%; }
+      background-size: auto 60%; }
     .stacked_gallery .stacked_img.horizontal.size3 {
-      background-size: 40%; }
+      background-size: auto 40%; }
     .stacked_gallery .stacked_img.vertical.size1 {
       background-size: auto 100%; }
     .stacked_gallery .stacked_img.vertical.size2 {
       background-size: auto 70%; }
     .stacked_gallery .stacked_img.vertical.size3 {
       background-size: auto 60%; }
+
+#info-section .box {
+  margin-bottom: 80px; }
+#info-section .team.box h2, #info-section .team.box h3 {
+  line-height: 1.3;
+  display: inline-block; }
+#info-section .team.box .team-name {
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+  #info-section .team.box .team-name:hover, #info-section .team.box .team-name.active {
+    border-bottom: 1px solid; }
+  #info-section .team.box .team-name.active {
+    cursor: default; }
+#info-section .team.box .team-profile {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  pointer-events: none;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s; }
+  #info-section .team.box .team-profile blockquote {
+    margin-bottom: 20px; }
+  #info-section .team.box .team-profile.active {
+    opacity: 1;
+    height: 100%;
+    position: static;
+    pointer-events: all; }
+#info-section .info-title {
+  position: relative; }
+  #info-section .info-title h2 {
+    max-width: calc(100% - 100px); }
+  #info-section .info-title:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 30px;
+    width: 30px;
+    height: 60px;
+    background: url("../img/tc_dots.svg") no-repeat center center;
+    background-size: contain; }
 
 .donations {
   background-color: #E6F499; }

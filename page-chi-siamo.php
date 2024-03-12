@@ -9,7 +9,7 @@
           <h1 class="s-xhuge uppercase serif italic"><?php the_title(); ?></h1>
         </div>
 
-        <div class="flex-row d-flex m-column spacing-t-4 spacing-b-4">
+        <div id="intro-section" class="flex-row d-flex m-column spacing-t-4 spacing-b-12">
           <div class="d-half m-whole d-flex d-column">
             <div class="wysiwyg s-large">
               <?php the_content(); ?>
@@ -41,6 +41,66 @@
           </div>
         </div>
 
+
+        <?php if( have_rows('info_boxes') ): ?>
+          <div id="info-section" class="flex-row d-flex wrap spacing-b-4">
+            <?php while( have_rows('info_boxes') ) : the_row(); ?>
+              <?php 
+                $team = get_sub_field('is_team_box'); 
+                $w = $team == 0 ? 'd-half' : 'd-whole';
+              ?>
+
+              <?php if ($team == 0): ?>
+                <div class="box d-half t-whole d-flex m-column">
+
+                  <div class="info-title d-half m-whole">
+                    <h2 class="s-regular uppercase reg"><?= the_sub_field('box_title'); ?></h2>
+                  </div>
+
+                  <div class="d-half m-whole">
+                    <div class="wysiwyg s-regular reg">
+                      <?= the_sub_field('box_text'); ?>
+                    </div>
+                  </div>
+
+                </div>
+              <?php else: ?>
+                <div class="team box d-flex m-column">
+
+                  <div class="d-half m-whole d-flex">
+                    <div class="info-title d-half">
+                      <h2 class="s-regular uppercase reg"><?= the_sub_field('box_title'); ?></h2>
+                    </div>
+
+                    <div class="team-list d-half">
+                      <?php if( have_rows('team_boxes') ): $j = 0; while( have_rows('team_boxes') ) : the_row(); $j++; ?>
+                        <h3 class="team-name <?php if ($j == 1):?>active<?php endif; ?> s-regular uppercase reg"><?= the_sub_field('team_name'); ?></h3>
+                        <h4 class="team-subtitle s-regular reg spacing-b-2"><?= the_sub_field('team_subtitle'); ?></h4>
+                      <?php endwhile; endif; ?>
+                    </div>
+                  </div>
+
+                  <div class="d-half m-whole">
+                    <?php if( have_rows('team_boxes') ): $k = 0; while( have_rows('team_boxes') ) : the_row(); $k++;
+                      $img = get_sub_field('team_portrait');
+                      ?>
+
+                      <div class="team-profile <?php if ($k == 1):?>active<?php endif; ?> d-flex m-column">
+                        <div class="d-half m-whole" style="background-image: url('<?= esc_url($img['url']); ?>');"></div>
+                        <div class="d-half m-whole">
+                          <div class="wysiwyg s-xsmall reg">
+                            <?= the_sub_field('team_bio'); ?>
+                          </div>
+                        </div>
+                      </div>
+                    <?php endwhile; endif; ?>
+                  </div>
+                </div>
+              <?php endif; ?>
+            <?php endwhile; ?>
+          </div>
+        <?php endif; ?>
+         
 
       </div>
     </div>  
