@@ -104,7 +104,7 @@
               </div>
 
               <div class="d-one-third t-whole">
-                <a href="mailto:amministrazione@thatscontemporary.com" class="button" role="button">Contattaci qui</a>
+                <a href="mailto:amministrazione@thatscontemporary.com" class="button" role="button"><?php _e("Contattaci qui", 'thats-theme'); ?></a>
               </div>
             </div>
 

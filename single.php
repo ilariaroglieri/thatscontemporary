@@ -51,15 +51,32 @@
             <!-- text module -->
             <?php if( get_row_layout() == 'text' ):
               $text = get_sub_field('text');
+              $title = get_sub_field('title');
             ?>
               <div class="text-container container spacing-t-4">
                 <div class="d-flex flex-row">
 
                   <div class="d-two-thirds t-whole">
+                    <?php if ($title): ?><h2 class="medium uppercase s-xsmall spacing-b-2"><?= $title; ?></h2><?php endif; ?>
                     <div class="wysiwyg serif s-regular">
                       <?= $text; ?>
                     </div>
                   </div>
+                </div>
+              </div>
+
+            <?php elseif( get_row_layout() == 'quote' ): ?>
+
+              <div class="text-container container spacing-t-4">
+                <div class="d-flex flex-row">
+
+                  <div class="d-one-twelfth t-hidden"></div>
+                  <div class="d-seven-twelfth t-whole">
+                    <div class="wysiwyg s-big uppercase light">
+                      <?php the_sub_field('quote_text') ?>
+                    </div>
+                  </div>
+
                 </div>
               </div>
 
@@ -68,7 +85,28 @@
               $count = count($images);
               ?>
 
-              <?php if ($count == 1):?>
+              <?php if ($count == 1): ?>
+                <?php 
+                  $img = $images[0];
+                  $caption = $img['caption']; 
+                ?>
+                <div class="container spacing-t-4">
+                  <div class="d-flex flex-row m-column-reverse">
+                    <div class="d-two-twelfth m-whole">
+                      <p class="label uppercase light s-xxsmall"><?php _e("In foto", 'thats-theme'); ?></p>
+
+                      <?php if ($caption): ?>
+                        <p class="light s-xxsmall"><?= $caption; ?></p>
+                      <?php endif; ?>
+                    </div>
+
+                    <div class="d-one-twelfth t-hidden"></div>
+
+                    <div class="d-nine-twelfth t-ten-twelfth m-whole">
+                      <img src="<?= $img['url']; ?>" />
+                    </div>
+                  </div>
+                </div>
 
               <?php elseif ($count == 2): ?>
 
@@ -92,12 +130,11 @@
                 <div class="caption-container container spacing-t-4">
                   <div class="d-flex flex-row">
                     <div class="d-two-twelfth">
-                      <p class="label uppercase light s-xxsmall">In foto</p>
+                      <p class="label uppercase light s-xxsmall"><?php _e("In foto", 'thats-theme'); ?></p>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row m-column spacing-t-2">
-
                     <?php foreach( $images as $i => $image ): ?>
                       <?php $caption = $image['caption']; ?>
 

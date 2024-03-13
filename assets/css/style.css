@@ -58,10 +58,12 @@
   font-size: 125px; }
 
 .s-huge {
-  font-size: 58px; }
+  font-size: 58px;
+  font-size: 3.6vw; }
 
 .s-big {
-  font-size: 50px; }
+  font-size: 50px;
+  font-size: 3vw; }
 
 .s-large, .wysiwyg.s-large > * {
   font-size: 40px;
@@ -533,6 +535,10 @@ ul {
   padding-left: 0;
   list-style-type: none; }
 
+img {
+  width: 100%;
+  height: auto; }
+
 .container {
   width: calc(100% - 60px);
   margin-left: 30px;
@@ -942,7 +948,11 @@ ul {
   .t-half {
     width: calc(50% - 20px);
     margin-left: 10px;
-    margin-right: 10px; } }
+    margin-right: 10px; }
+
+  .t-ten-twelfth {
+    width: calc(8.3333%*10 - 20px);
+    margin: 0 10px; } }
 @media screen and (max-width: 640px) {
   .m-hidden {
     display: none; }

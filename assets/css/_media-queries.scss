@@ -33,6 +33,11 @@
     margin-left: #{$half-spacing};
     margin-right: #{$half-spacing};
   }
+
+  .t-ten-twelfth {
+    width: calc(#{$col}*10 - #{$spacing});
+    margin: 0 #{$half-spacing};
+  }
 }
 
 @media screen and (max-width: $mobile) {
