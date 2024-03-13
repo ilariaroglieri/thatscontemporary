@@ -736,6 +736,31 @@ img {
   display: inline-block;
   padding-right: 40px; }
 
+.dot-link {
+  position: relative; }
+  .dot-link:before {
+    content: '';
+    display: block;
+    margin-bottom: 10px;
+    background-color: #3D374A;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    background-image: url("../img/tc_arrow.svg");
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s; }
+  .dot-link.next {
+    display: flex;
+    flex-flow: column-reverse; }
+    .dot-link.next:before {
+      margin-top: 20px; }
+  .dot-link:hover:before {
+    background-color: #be0dbd;
+    background-position: 48px; }
+
 .button {
   border: none;
   background-color: #cecece;
