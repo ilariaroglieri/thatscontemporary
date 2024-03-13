@@ -80,7 +80,6 @@ jQuery(document).ready(function($) {
     spaceBetween: 10,
     speed: 2000,
     touchEventsTarget: 'container-fluid',
-    // cssMode: true,
     grabCursor: true,
     autoplay: {
       delay: 2000,

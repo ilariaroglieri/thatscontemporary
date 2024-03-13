@@ -23,8 +23,7 @@
 
         <!-- modules -->
         <?php $subtitle = get_field('article_subtitle'); ?>
-        <div id="article-header">
-
+        <div id="article-header" class="spacing-t-4">
           <!-- title -->
           <div class="d-flex flex-row">
             <div class="d-two-thirds t-whole">
@@ -82,10 +81,33 @@
                       <?php foreach( $images as $i => $image ): ?>
                         <div class="swiper-slide">
                           <img src="<?= $image['url']; ?>" />
+                          <p class="s-xxsmall"><?= ($i+1).'/'.$count; ?></p>
                         </div>
                       <?php endforeach; ?>
 
                     </div>
+                  </div>
+                </div>
+
+                <div class="caption-container container spacing-t-4">
+                  <div class="d-flex flex-row">
+                    <div class="d-two-twelfth">
+                      <p class="label uppercase light s-xxsmall">In foto</p>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row m-column spacing-t-2">
+
+                    <?php foreach( $images as $i => $image ): ?>
+                      <?php $caption = $image['caption']; ?>
+
+                      <?php if ($caption): ?>
+                        <div class="d-two-twelfth">
+                          <p class="light s-xxsmall"><?= ($i+1).'. '.$caption; ?></p>
+                        </div>
+                      <?php endif; ?>
+
+                    <?php endforeach; ?>
                   </div>
                 </div>
 
