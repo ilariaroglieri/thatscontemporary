@@ -18,6 +18,10 @@
             <p class="s-xsmall light"><?= get_the_date( 'd M Y' ); ?></p>
             <p class="s-xsmall light"><?php the_field('article_author'); ?></p>
           </div>
+
+          <div class="article-tags t-center">
+            <p class="s-xsmall uppercase tag label"><?php echo get_the_tag_list('',', ',''); ?> </p>
+          </div>
         </div>
 
 
