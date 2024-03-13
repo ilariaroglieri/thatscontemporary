@@ -263,6 +263,10 @@ li {
   z-index: 100;
 }
 
+#header-container {
+  margin-top: calc(1.3vw + #{$half-spacing});
+}
+
 #header {
   #logo {
     width: 33vw;
@@ -392,6 +396,20 @@ li {
 .content {
   min-height: 100vh;
   margin-bottom: $double-spacing*3;
+}
+
+// notebook
+#article-opening {
+  .article-cover {
+    height: calc(100vh - 300px);
+  }
+  .article-metadata {
+    background-color: $color2;
+    p {
+      margin-left: $double-spacing;
+      margin-bottom: 0;
+    }
+  }
 }
 
 .button {
