@@ -110,6 +110,36 @@
 
               <?php elseif ($count == 2): ?>
 
+                <div class="two-img-container container spacing-t-4">
+                  <div class="d-flex flex-row m-column-reverse">
+                    <div class="d-two-twelfth m-whole">
+                      <p class="label uppercase light s-xxsmall"><?php _e("In foto", 'thats-theme'); ?></p>
+
+                      <?php foreach( $images as $i => $image ): ?>
+                        <?php $caption = $image['caption']; ?>
+
+                        <?php if ($caption): ?>
+                          <p class="light s-xxsmall"><?= $caption; ?></p>
+                        <?php endif; ?>
+
+                      <?php endforeach; ?>
+                    </div>
+
+                    <div class="d-one-twelfth t-hidden"></div>
+
+                    <div class="d-eight-twelfth t-ten-twelfth m-whole">
+                      <div class="d-flex flex-row">
+                        <?php foreach( $images as $i => $image ): ?>
+                          <div class="vertical" style="background-image: url('<?= $image['url']; ?>');">
+                          </div>
+                        <?php endforeach; ?>
+                      </div>
+                    </div>
+                    
+                    <div class="d-one-twelfth t-hidden"></div>
+                  </div>
+                </div>
+
               <?php else: ?>
 
                 <!-- slider module -->

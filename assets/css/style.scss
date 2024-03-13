@@ -421,6 +421,17 @@ img {
   }
 }
 
+.two-img-container {
+  .vertical {
+    aspect-ratio: 1/1.25;
+    width: calc(50% - #{$spacing});
+    margin: 0 $half-spacing; 
+    background-repeat: none;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
 .swiper {
   .swiper-wrapper {
     .swiper-slide {
