@@ -459,6 +459,14 @@ img {
   background-color: $color2;
 }
 
+#article-footer {
+  .label {
+    display: inline-block;
+    padding-right: $double-spacing;
+  }
+}
+
+
 .button {
   border: none;
   background-color: #cecece;

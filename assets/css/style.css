@@ -732,6 +732,10 @@ img {
 .label {
   background-color: #8df2A8; }
 
+#article-footer .label {
+  display: inline-block;
+  padding-right: 40px; }
+
 .button {
   border: none;
   background-color: #cecece;
