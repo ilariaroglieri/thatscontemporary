@@ -85,7 +85,7 @@
                     </div>
                   </div>
 
-                  <div class="d-half m-whole">
+                  <div class="d-half m-whole p-relative">
                     <?php if( have_rows('team_boxes') ): $k = 0; while( have_rows('team_boxes') ) : the_row(); $k++;
                       $img = get_sub_field('team_portrait');
                       $teamName = get_sub_field('team_name');

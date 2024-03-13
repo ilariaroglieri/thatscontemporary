@@ -751,14 +751,13 @@ ul {
   position: absolute;
   top: 0;
   left: 0;
-  height: 0;
   width: 100%;
   pointer-events: none;
-  -webkit-transition: opacity 0.3s;
-  -moz-transition: opacity 0.3s;
-  -ms-transition: opacity 0.3s;
-  -o-transition: opacity 0.3s;
-  transition: opacity 0.3s; }
+  -webkit-transition: opacity 0.3s 0.3s;
+  -moz-transition: opacity 0.3s 0.3s;
+  -ms-transition: opacity 0.3s 0.3s;
+  -o-transition: opacity 0.3s 0.3s;
+  transition: opacity 0.3s 0.3s; }
   #info-section .team.box .team-profile .team-img {
     aspect-ratio: 1/1.5;
     background-size: cover;
@@ -801,7 +800,8 @@ ul {
       position: absolute;
       left: -65px; }
   .donations .donation-tab {
-    position: relative; }
+    position: relative;
+    aspect-ratio: 4/1; }
     .donations .donation-tab .donation-text {
       opacity: 0;
       position: absolute;
@@ -825,6 +825,7 @@ ul {
   .donations .donation-button {
     cursor: pointer;
     position: relative;
+    padding: 3px 0;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;

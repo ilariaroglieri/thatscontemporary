@@ -479,10 +479,10 @@ li {
       position: absolute;
       top:0;
       left: 0;
-      height: 0;
+      // height: 0;
       width: 100%;
       pointer-events: none;
-      @include transition(opacity .3s);
+      @include transition(opacity .3s .3s);
       .team-img {
         aspect-ratio: 1/1.5;
         background-size: cover;
@@ -541,6 +541,7 @@ li {
   }
   .donation-tab {
     position: relative;
+    aspect-ratio: 4/1;
     .donation-text {
       opacity: 0;
       position: absolute;
@@ -564,6 +565,7 @@ li {
   .donation-button {
     cursor: pointer;
     position: relative;
+    padding: 3px 0;
     @include transition(all .3s);
     &:hover {
       color: $color3;

@@ -91,7 +91,7 @@ jQuery(document).ready(function($) {
     $('.donation-button').removeClass('active');
     $(this).addClass('active');
 
-    $('.donation-text').removeClass('visible'); 
+    $('.donation-text[data-tab]').removeClass('visible'); 
     $('.donation-text[data-tab='+ val +']').addClass('visible'); 
   });
 
