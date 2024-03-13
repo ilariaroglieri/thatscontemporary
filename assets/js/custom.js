@@ -52,7 +52,6 @@ jQuery(document).ready(function($) {
   });
 
   // --- stacked galleries
-
   var imgs = $('.stacked_gallery ').find('.stacked_img');
   var timer;
   var j = 0;
@@ -73,6 +72,26 @@ jQuery(document).ready(function($) {
       activeLoop(imgs);
     }, 300);
   }
+
+  // --- Slider
+  const swiper = new Swiper('.swiper', {
+    // loop: true,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    speed: 2000,
+    touchEventsTarget: 'container-fluid',
+    // cssMode: true,
+    grabCursor: true,
+    autoplay: {
+      delay: 2000,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: "auto",
+        centeredSlides: true,
+      }
+    },
+  });
 
   // --- team tabs
   $('.team-name').click(function() {
