@@ -19,8 +19,9 @@
             <p class="s-xsmall light"><?php the_field('article_author'); ?></p>
           </div>
 
+          <?php $mainTag = get_the_terms( $post->ID, 'main_tag' ); ?>
           <div class="article-tags t-center">
-            <p class="s-xsmall uppercase tag label"><?php echo get_the_tag_list('',', ',''); ?> </p>
+            <p class="s-xsmall uppercase tag label"><?= $mainTag[0]->name; ?> </p>
           </div>
         </div>
 
@@ -31,7 +32,7 @@
           <!-- title -->
           <div class="d-flex flex-row">
             <div class="d-two-thirds t-whole">
-              <h1 class="s-big light uppercase"><?php the_title(); echo ' '.($subtitle); ?></h1>
+              <h1 class="s-big light uppercase"><?php the_title(); if ($subtitle): echo ' '.($subtitle); endif; ?></h1>
             </div>
           </div>
 

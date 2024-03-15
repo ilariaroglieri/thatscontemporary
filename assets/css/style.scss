@@ -464,10 +464,35 @@ img {
   }
 }
 
+
+
 #article-footer {
   .label {
     display: inline-block;
     padding-right: $double-spacing;
+  }
+}
+
+// media articles
+.background-container {
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+#content-single-media {
+  margin-top: 50vh;
+  #article-opening {
+    max-width: 850px;
+    margin: 0 auto;
+  }
+  #article-contents {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: $double-spacing;
+    background-color: #cecece;
   }
 }
 
