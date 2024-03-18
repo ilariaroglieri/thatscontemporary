@@ -26,11 +26,10 @@
         </div>
 
 
-        <!-- modules -->
         <?php $subtitle = get_field('article_subtitle'); ?>
         <div id="article-header" class="spacing-t-4">
           <!-- title -->
-          <div class="d-flex flex-row">
+          <div class="d-flex flex-row t-column">
             <div class="d-two-thirds t-whole">
               <h1 class="s-big light uppercase"><?php the_title(); if ($subtitle): echo ' '.($subtitle); endif; ?></h1>
             </div>
@@ -48,6 +47,7 @@
         </div>
       </div>
 
+      <!-- modules -->
       <?php if( have_rows('article_modules') ): ?>
         <div id="article-content" class="modules">
 
@@ -202,7 +202,7 @@
             ?>
 
             <div class="d-three-twelfth t-whole">
-              <p class="label uppercase light s-xxsmall"><?= $title; ?></p>
+              <p class="label short uppercase light s-xxsmall"><?= $title; ?></p>
 
               <div class="wywiwyg s-xxsmall spacing-t-1">
                 <?= $text; ?>

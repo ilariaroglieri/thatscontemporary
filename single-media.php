@@ -17,7 +17,7 @@ Template Post Type: post
       <div id="article-opening">
         <?php $mainTag = get_the_terms( $post->ID, 'main_tag' ); ?>
         <div class="article-tags t-center">
-          <p class="s-xsmall uppercase tag label"><?= $mainTag[0]->name; ?> </p>
+          <p class="s-xsmall uppercase tag label"><?= $mainTag[0]->name; ?></p>
         </div>
 
         <div class="article-metadata d-flex">
@@ -41,15 +41,102 @@ Template Post Type: post
           <div class="d-flex flex-row">
             <div class="d-whole spacing-t-8">
               <div class="wysiwyg s-regular light">
-                <?php the_content() ?>
+                <?php the_content(); ?>
+              </div>
+              <div class="wysiwyg s-small light underlined spacing-t-2">
+                <?php 
+                  $posttags = get_the_tags(); 
+                  echo '#'. $mainTag[0]->name;
+                  if ($posttags) {
+                    foreach($posttags as $tag) {
+                      echo ' #' . $tag->name; 
+                    }
+                  }
+                ?>
               </div>
             </div>
           </div>
         </div>
 
+        <?php if( have_rows('article_modules') ): ?>
+          <div id="article-content" class="modules">
+
+            <?php while ( have_rows('article_modules') ) : the_row(); ?>
+
+              <!-- quote module -->
+              <?php if( get_row_layout() == 'quote' ): ?>
+
+                <div class="text-container spacing-t-4">
+                  <div class="d-flex flex-row">
+
+                    <div class="d-whole">
+                      <div class="wysiwyg s-big light">
+                        <?php the_sub_field('quote_text') ?>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              <!-- imgs module -->
+              <?php elseif( get_row_layout() == 'images' ): 
+                $images = get_sub_field('images'); 
+                ?>
+
+                <?php foreach( $images as $i => $img ): ?>
+                  <div class="img-container spacing-t-4">
+                    <div class="d-flex flex-row">
+                      <div class="d-whole">
+                        <img src="<?= $img['url']; ?>" />
+                      </div>
+                    </div>
+                  </div>
+                <?php endforeach; ?>
+
+              <?php elseif( get_row_layout() == 'bio_data' ): 
+                $text = get_sub_field('bio_text'); ?>
+
+                <div class="info-container spacing-t-4">
+                  <div class="d-flex flex-row m-column">
+                    <div class="d-half m-whole">
+                      <p class="label short uppercase light s-xxsmall">Bio dell'autore</p>
+
+                      <div class="wywiwyg s-xxsmall spacing-t-1">
+                        <?= $text; ?>
+                      </div>
+                    </div>
+
+                    <?php if( have_rows('artwork_data') ): ?>
+                      <div class="d-half m-whole">
+                        <p class="label short uppercase light s-xxsmall">Scheda dell'opera</p>
+
+                        <?php while( have_rows('artwork_data') ): the_row();
+                          $label = get_sub_field('etichetta');
+                          $adata = get_sub_field('art_data');
+                        ?>
+                          <div class="d-flex flex-row m-column spacing-t-1">
+                            <div class="d-half m-whole">
+                              <p class="s-xxsmall uppercase underline"><?= $label; ?></p>
+                            </div>
+                            <div class="d-half m-whole">
+                              <p class="s-xxsmall"><?= $adata; ?></p>
+                            </div>
+                          </div>
+                        <?php endwhile; ?>
+
+                        <a href="mailto:amministrazione@thatscontemporary.com" class="button spacing-t-2" role="button"><?php _e("Inquiry", 'thats-theme'); ?></a>
+                      </div>
+                    <?php endif; ?>
+                  </div>
+                </div>
+               
+              <?php endif; ?>
+
+            <?php endwhile; ?>
+          </div>
+        <?php endif; ?>
+
       </div>
-
-
 
     </article>
 
@@ -62,9 +149,5 @@ Template Post Type: post
 
 </section>
 
-<div class="navigation">
-  <div class="navi previous"><?php previous_post_link( '%link','⟵', false ); ?></div>
-  <div class="navi next"><?php next_post_link( '%link','⟶', false ); ?></div>
-</div>
 
 <?php get_footer(); ?>

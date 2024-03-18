@@ -457,6 +457,9 @@
 .p-fixed {
   position: fixed; }
 
+.d-inline-block {
+  display: inline-block; }
+
 .overall {
   top: 0;
   left: 0;
@@ -472,11 +475,9 @@
   height: 100vh; }
 
 .f-right {
-  text-align: right;
   float: right; }
 
 .f-left {
-  text-align: left;
   float: left; }
 
 .t-center {
@@ -493,6 +494,9 @@
 
 .color2 {
   color: #8df2A8; }
+
+.wysiwyg.s-large > *, .wysiwyg.s-large > .wysiwyg > * {
+  line-height: 1.1; }
 
 .two-columns {
   columns: 2;
@@ -735,10 +739,10 @@ img {
     background-color: #FFFCD5;
     display: inline-block;
     padding: 0 20px; }
-
-#article-footer .label {
-  display: inline-block;
-  padding-right: 40px; }
+  .label.short {
+    display: inline-block;
+    padding-right: 40px;
+    padding-left: 3px; }
 
 .background-container {
   top: 0;
@@ -748,15 +752,18 @@ img {
   z-index: -1; }
 
 #content-single-media {
-  margin-top: 50vh; }
+  margin-top: 50vw; }
   #content-single-media #article-opening {
-    max-width: 850px;
+    max-width: 50vw;
     margin: 0 auto; }
   #content-single-media #article-contents {
-    max-width: 850px;
+    max-width: 50vw;
     margin: 0 auto;
     padding: 40px;
     background-color: #cecece; }
+  #content-single-media .button {
+    background-color: #8df2A8;
+    max-width: 12vw; }
 
 .dot-link {
   position: relative; }
@@ -881,6 +888,24 @@ img {
     height: 60px;
     background: url("../img/tc_dots.svg") no-repeat center center;
     background-size: contain; }
+
+.place-title {
+  margin-right: 10px; }
+
+.place-img-container {
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s; }
+  .place-img-container.visible {
+    opacity: 1; }
+  .place-img-container img {
+    width: 80%;
+    max-height: 180px;
+    object-fit: contain; }
 
 .donations {
   background-color: #E6F499; }

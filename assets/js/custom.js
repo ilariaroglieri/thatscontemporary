@@ -92,6 +92,14 @@ jQuery(document).ready(function($) {
     },
   });
 
+  // --- percorsi articles
+  $('.place-title').mouseenter(function() {
+    $('.place-img-container').removeClass('visible');
+    $(this).parent().parent().parent().find('.place-img-container').addClass('visible');
+  }).mouseleave(function() {
+    $('.place-img-container').removeClass('visible');
+  });
+
   // --- team tabs
   $('.team-name').click(function() {
     var val = $(this).attr('data-id'); 
