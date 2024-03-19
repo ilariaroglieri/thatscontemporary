@@ -114,7 +114,9 @@
 }
 
 .underline {
-  text-decoration: underline;
+  border-bottom: 1px solid;
+  display: inline;
+  // line-height: 1 !important;
 }
 
 .color1 {
@@ -126,6 +128,10 @@
 }
 
 .wysiwyg {
+  &.s-big > * {
+    @extend .s-big;
+    line-height: 1.1;
+  }
   &.s-large > * {
     @extend .s-large;
     line-height: 1.1;
@@ -188,8 +194,13 @@ h1, h2, h3, h4 {
 a {
   color:$color1;
   text-decoration: none;
+  @include transition(all .3s);
   &:hover {
     color: $color1;
+  }
+  &.color-hover:hover {
+    color: $color3;
+    border-bottom-color: $color3;
   }
 }
 
@@ -668,6 +679,40 @@ img {
     width: 80%;
     max-height: 180px;
     object-fit: contain;
+  }
+}
+.surr-place-container {
+  padding: $spacing;
+  padding-right: $double-spacing;
+  border: 1px solid $color1;
+  .surr-place-img {
+    aspect-ratio: 1/1.25;
+    width: calc(33% - #{$double-spacing});
+    margin-right: $double-spacing;
+    margin-bottom: $double-spacing;
+  }
+  .surr-place-txt {
+    width: 66%;
+    .surr-place-title {
+      margin-top: .25vw;
+      margin-right: 5px;
+    }
+  }
+  &.submit {
+    background-color: #F0EAD9;
+  }
+}
+
+.border-right {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    right: $half-spacing;
+    top: -$half-spacing;
+    width: 1px;
+    height: calc(100% + #{$half-spacing });
+    background-color: $color1;
   }
 }
 

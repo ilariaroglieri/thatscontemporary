@@ -6,7 +6,7 @@
     <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
       <div class="container">
         <div class="subtitle t-center">
-          <p class="s-medium uppercase serif italic">Notebook</p>
+          <p class="s-medium uppercase serif italic"><?php _e("Notebook", 'thats-theme'); ?></p>
         </div>
 
         <!-- opening image -->
