@@ -730,12 +730,12 @@ img {
 // related
 #related {
   background-color: #D0D0D0;
-  .surr-place-img {
-    aspect-ratio: 1/1.25;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
+}
+.article-img {
+  aspect-ratio: 1/1.25;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 // donazioni
