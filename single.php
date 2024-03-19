@@ -58,7 +58,7 @@
               $text = get_sub_field('text');
               $title = get_sub_field('title');
             ?>
-              <div class="text-container container spacing-t-4">
+              <div class="reveal-module text-container container spacing-t-4">
                 <div class="d-flex flex-row">
 
                   <div class="d-two-thirds t-whole">
@@ -72,7 +72,7 @@
 
             <?php elseif( get_row_layout() == 'quote' ): ?>
 
-              <div class="text-container container spacing-t-4">
+              <div class="reveal-module text-container container spacing-t-4">
                 <div class="d-flex flex-row">
 
                   <div class="d-one-twelfth t-hidden"></div>
@@ -95,19 +95,19 @@
                   $img = $images[0];
                   $caption = $img['caption']; 
                 ?>
-                <div class="container spacing-t-4">
+                <div class="reveal-module container spacing-t-4">
                   <div class="d-flex flex-row m-column-reverse">
                     <div class="d-two-twelfth m-whole">
                       <p class="label uppercase light s-xxsmall"><?php _e("In foto", 'thats-theme'); ?></p>
 
                       <?php if ($caption): ?>
-                        <p class="light s-xxsmall"><?= $caption; ?></p>
+                        <p class="light s-xxsmall reveal-child"><?= $caption; ?></p>
                       <?php endif; ?>
                     </div>
 
                     <div class="d-one-twelfth t-hidden"></div>
 
-                    <div class="d-nine-twelfth t-ten-twelfth m-whole">
+                    <div class="d-nine-twelfth t-ten-twelfth m-whole reveal-child">
                       <img src="<?= $img['url']; ?>" />
                     </div>
                   </div>
@@ -115,7 +115,7 @@
 
               <?php elseif ($count == 2): ?>
 
-                <div class="two-img-container container spacing-t-4">
+                <div class="reveal-module two-img-container container spacing-t-4">
                   <div class="d-flex flex-row m-column-reverse">
                     <div class="d-two-twelfth m-whole">
                       <p class="label uppercase light s-xxsmall"><?php _e("In foto", 'thats-theme'); ?></p>
@@ -124,7 +124,7 @@
                         <?php $caption = $image['caption']; ?>
 
                         <?php if ($caption): ?>
-                          <p class="light s-xxsmall"><?= $caption; ?></p>
+                          <p class="light s-xxsmall reveal-child"><?= $caption; ?></p>
                         <?php endif; ?>
 
                       <?php endforeach; ?>
@@ -135,7 +135,7 @@
                     <div class="d-eight-twelfth t-ten-twelfth m-whole">
                       <div class="d-flex flex-row">
                         <?php foreach( $images as $i => $image ): ?>
-                          <div class="vertical" style="background-image: url('<?= $image['url']; ?>');">
+                          <div class="vertical reveal-child" style="background-image: url('<?= $image['url']; ?>');">
                           </div>
                         <?php endforeach; ?>
                       </div>
@@ -148,7 +148,7 @@
               <?php else: ?>
 
                 <!-- slider module -->
-                <div class="slider-container container-fluid p-relative spacing-t-4">
+                <div class="reveal-module slider-container container-fluid p-relative spacing-t-4">
                   <div class="swiper">
                     <div class="swiper-wrapper">
                       <?php foreach( $images as $i => $image ): ?>
@@ -162,7 +162,7 @@
                   </div>
                 </div>
 
-                <div class="caption-container container spacing-t-4">
+                <div class="reveal-module caption-container container spacing-t-4">
                   <div class="d-flex flex-row">
                     <div class="d-two-twelfth">
                       <p class="label uppercase light s-xxsmall"><?php _e("In foto", 'thats-theme'); ?></p>
@@ -174,7 +174,7 @@
                       <?php $caption = $image['caption']; ?>
 
                       <?php if ($caption): ?>
-                        <div class="d-two-twelfth">
+                        <div class="d-two-twelfth reveal-child">
                           <p class="light s-xxsmall"><?= ($i+1).'. '.$caption; ?></p>
                         </div>
                       <?php endif; ?>
@@ -201,15 +201,15 @@
               $img = get_sub_field('module_image');
             ?>
 
-            <div class="d-three-twelfth t-whole">
-              <p class="label short uppercase light s-xxsmall"><?= $title; ?></p>
+            <div class="d-three-twelfth t-whole reveal-module">
+              <p class="reveal-child label short uppercase light s-xxsmall"><?= $title; ?></p>
 
-              <div class="wywiwyg s-xxsmall spacing-t-1">
+              <div class="reveal-child wywiwyg s-xxsmall spacing-t-1">
                 <?= $text; ?>
               </div>
 
               <?php if ($img): ?>
-                <img class="spacing-t-2" src="<?= $img['url']; ?>" />
+                <img class="reveal-child spacing-t-2" src="<?= $img['url']; ?>" />
               <?php endif; ?>
             </div>
 
@@ -218,7 +218,6 @@
         </div>
       <?php endif; ?>
 
-      <!-- navi -->
       <?php include('navi.php'); ?>
 
   <?php endwhile; else: ?>

@@ -9,13 +9,13 @@ if( $related ): ?>
 
       <div class="d-flex flex-row wrap">
         <?php foreach( $related as $post ): setup_postdata($post); ?>
-          <div class="related-container d-one-third m-whole d-flex d-column spacing-b-2">
+          <div class="related-container d-one-third m-whole d-flex d-column spacing-b-2 reveal-module">
             <?php $thumb = get_the_post_thumbnail_url(); ?>
             <div class="dot-link">
               <a class="p-absolute overall" href="<?= the_permalink(); ?>"></a>
-              <div class="surr-place-img" style="background-image: url('<?= $thumb; ?>');">
+              <div class="surr-place-img reveal-child" style="background-image: url('<?= $thumb; ?>');">
               </div>
-              <h4 class="s-large uppercase light spacing-t-1"><?php the_title(); ?></h4>
+              <h4 class="s-large uppercase light spacing-t-1 reveal-child"><?php the_title(); ?></h4>
             </div>
           </div>
         <?php endforeach; ?>

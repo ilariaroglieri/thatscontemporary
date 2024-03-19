@@ -13,7 +13,7 @@ function checkScroll() {
 //-----------DOCUMENT.READY----------------
 
 jQuery(document).ready(function($) {
-	
+
   // scroll events
   var prevScrollPos = $(window).scrollTop();
   $(window).scroll(function() {
@@ -120,6 +120,17 @@ jQuery(document).ready(function($) {
     $('.donation-text[data-tab]').removeClass('visible'); 
     $('.donation-text[data-tab='+ val +']').addClass('visible'); 
   });
+
+  // scroll reveal
+  ScrollReveal().reveal('.reveal-module', { 
+    interval: 500, 
+    duration: 1000,
+    reset: true,
+    afterReveal: ScrollReveal().reveal('.reveal-child', { interval: 200, duration: 300, reset: true, distance: '50px'})
+  });
+
+
+
 
 
 //----------END JQUERY -----------
