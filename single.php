@@ -230,5 +230,6 @@
 
 </section>
 
+<?php include('related.php'); ?>
 
 <?php get_footer(); ?>
