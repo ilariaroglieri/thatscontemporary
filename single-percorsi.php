@@ -137,6 +137,7 @@ Template Post Type: post
 
     </article>
 
+
   <?php endwhile; else: ?>
 
     <h2>Woops...</h2>
@@ -146,6 +147,7 @@ Template Post Type: post
 
 </section>
 
+<?php include('related.php'); ?>
 
 
 <?php get_footer(); ?>

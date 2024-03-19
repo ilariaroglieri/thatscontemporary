@@ -512,10 +512,10 @@ img {
 
 .dot-link {
   position: relative;
-  &:before {
+  &:after {
     content:'';
     display: block;
-    margin-bottom: $half-spacing;
+    margin-top: $half-spacing;
     background-color: $color1;
     border-radius: 50%;
     width: 48px;
@@ -523,14 +523,14 @@ img {
     background-image: url('../img/tc_arrow.svg');
     @include transition(all .3s);
   } 
-  &.next {
+  &.previous {
     display: flex;
     flex-flow: column-reverse;
-    &:before {
-      margin-top: $spacing;
+    &:after {
+      margin-bottom: $half-spacing;
     }
   }
-  &:hover:before {
+  &:hover:after {
     background-color: $color3;
     background-position: 48px;
   }
@@ -713,6 +713,17 @@ img {
     width: 1px;
     height: calc(100% + #{$half-spacing });
     background-color: $color1;
+  }
+}
+
+// related
+#related {
+  background-color: #D0D0D0;
+  .surr-place-img {
+    aspect-ratio: 1/1.25;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
 

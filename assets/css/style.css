@@ -778,10 +778,10 @@ img {
 
 .dot-link {
   position: relative; }
-  .dot-link:before {
+  .dot-link:after {
     content: '';
     display: block;
-    margin-bottom: 10px;
+    margin-top: 10px;
     background-color: #3D374A;
     border-radius: 50%;
     width: 48px;
@@ -792,12 +792,12 @@ img {
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s; }
-  .dot-link.next {
+  .dot-link.previous {
     display: flex;
     flex-flow: column-reverse; }
-    .dot-link.next:before {
-      margin-top: 20px; }
-  .dot-link:hover:before {
+    .dot-link.previous:after {
+      margin-bottom: 10px; }
+  .dot-link:hover:after {
     background-color: #be0dbd;
     background-position: 48px; }
 
@@ -945,6 +945,14 @@ img {
     width: 1px;
     height: calc(100% + 10px);
     background-color: #3D374A; }
+
+#related {
+  background-color: #D0D0D0; }
+  #related .surr-place-img {
+    aspect-ratio: 1/1.25;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; }
 
 .donations {
   background-color: #E6F499; }
