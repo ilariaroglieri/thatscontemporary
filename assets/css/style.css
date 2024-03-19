@@ -460,6 +460,9 @@
 .d-inline-block {
   display: inline-block; }
 
+.d-none {
+  display: none; }
+
 .overall {
   top: 0;
   left: 0;
@@ -712,6 +715,9 @@ img {
 .content {
   min-height: 100vh;
   margin-bottom: 120px; }
+
+body.page-notebook #article-header .dot-link {
+  display: inline-block !important; }
 
 #article-opening .article-cover {
   height: calc(100vh - 300px); }

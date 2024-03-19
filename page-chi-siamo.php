@@ -5,9 +5,8 @@
 
     <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
       <div class="container">
-        <div class="title border-top border-bottom spacing-p-t-4 t-center">
-          <h1 class="s-xhuge uppercase serif italic"><?php the_title(); ?></h1>
-        </div>
+        
+        <?php include('snippets/hero-title.php'); ?>
 
         <div id="intro-section" class="flex-row d-flex m-column spacing-t-4 spacing-b-12">
           <div class="d-half m-whole d-flex d-column">

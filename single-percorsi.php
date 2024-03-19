@@ -15,39 +15,8 @@ Template Post Type: post
           <p class="s-medium uppercase serif italic"><?php _e("Notebook", 'thats-theme'); ?></p>
         </div>
 
-        <!-- opening image -->
-        <?php $thumb = get_the_post_thumbnail_url(); ?>
-        <div id="article-opening" class="spacing-t-4" >
-          <div class="article-cover full-width" style="background-image: url('<?= $thumb; ?>');"></div>
-
-          <div class="article-metadata d-flex">
-            <p class="s-xsmall light"><?= get_the_date( 'd M Y' ); ?></p>
-            <p class="s-xsmall light"><?php the_field('article_author'); ?></p>
-          </div>
-
-          <?php $mainTag = get_the_terms( $post->ID, 'main_tag' ); ?>
-          <div class="article-tags t-center">
-            <p class="s-xsmall uppercase tag label"><?= $mainTag[0]->name; ?> </p>
-          </div>
-        </div>
-
-        <?php $subtitle = get_field('article_subtitle'); ?>
-        <div id="article-header" class="spacing-t-4">
-          <!-- title -->
-          <div class="d-flex flex-row t-column">
-            <div class="d-five-twelfth t-whole">
-              <h1 class="s-big light uppercase"><?php the_title(); if ($subtitle): echo ' '.($subtitle); endif; ?></h1>
-            </div>
-
-            <!-- intro text -->
-            <div class="d-two-twelfth t-hidden"></div>
-            <div class="d-five-twelfth t-whole">
-              <div class="wysiwyg s-small light">
-                <?php the_content() ?>
-              </div>
-            </div>
-          </div>
-        </div>
+        <?php include('snippets/article-opening.php'); ?>
+        <?php include('snippets/article-header.php'); ?>
 
         <!-- list of places -->
         <?php
@@ -133,7 +102,7 @@ Template Post Type: post
       </div>
 
       <!-- navi -->
-      <?php include('navi.php'); ?>
+      <?php include('snippets/navi.php'); ?>
 
     </article>
 
@@ -147,6 +116,6 @@ Template Post Type: post
 
 </section>
 
-<?php include('related.php'); ?>
+<?php include('snippets/related.php'); ?>
 
 <?php get_footer(); ?>
