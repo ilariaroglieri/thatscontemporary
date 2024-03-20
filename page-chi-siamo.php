@@ -8,9 +8,9 @@
         
         <?php include('snippets/hero-title.php'); ?>
 
-        <div id="intro-section" class="flex-row d-flex m-column spacing-t-4 spacing-b-12">
+        <div id="intro-section" class="flex-row d-flex m-column spacing-t-4 spacing-b-12 reveal-module">
           <div class="d-half m-whole d-flex d-column">
-            <div class="wysiwyg s-large">
+            <div class="wysiwyg s-large reveal-child">
               <?php the_content(); ?>
             </div>
 
@@ -18,7 +18,7 @@
             $images = get_field('stacked_gallery'); 
             
             if( $images ): ?>
-              <div class="stacked_gallery spacing-t-4">
+              <div class="stacked_gallery spacing-t-4 reveal-child">
                 <?php foreach( $images as $i => $image ): ?>
                   <?php 
                     list($width, $height) = getimagesize($image['url']);
@@ -33,7 +33,7 @@
             <?php endif; ?>
           </div>
 
-          <div class="d-half m-whole two-columns">
+          <div class="d-half m-whole two-columns reveal-child">
             <div class="wysiwyg s-small">
               <?= the_field('introduction_text'); ?>
             </div>
@@ -42,7 +42,7 @@
 
 
         <?php if( have_rows('info_boxes') ): ?>
-          <div id="info-section" class="flex-row d-flex wrap spacing-b-4">
+          <div id="info-section" class="flex-row d-flex wrap spacing-b-4 reveal-module">
             <?php while( have_rows('info_boxes') ) : the_row(); ?>
               <?php 
                 $team = get_sub_field('is_team_box'); 
@@ -54,11 +54,11 @@
               <?php if ($team == 0): ?>
                 <div data-id="<?= slugify($boxName); ?>" class="box d-half t-whole d-flex m-column">
 
-                  <div class="info-title d-half m-whole">
+                  <div class="info-title d-half m-whole reveal-child">
                     <h2 class="s-regular uppercase reg"><?= the_sub_field('box_title'); ?></h2>
                   </div>
 
-                  <div class="d-half m-whole">
+                  <div class="d-half m-whole reveal-child">
                     <div class="wysiwyg <?= $w; ?> reg">
                       <?= the_sub_field('box_text'); ?>
                     </div>
@@ -66,14 +66,14 @@
 
                 </div>
               <?php else: ?>
-                <div data-id="<?= slugify($boxName); ?>" class="team box d-flex m-column">
+                <div data-id="<?= slugify($boxName); ?>" class="team box d-flex m-column reveal-module">
 
-                  <div class="d-half m-whole d-flex">
+                  <div class="d-half m-whole d-flex reveal-child">
                     <div class="info-title d-half">
                       <h2 class="s-regular uppercase reg"><?= $boxName; ?></h2>
                     </div>
 
-                    <div class="team-list d-half">
+                    <div class="team-list d-half reveal-child">
                       <?php if( have_rows('team_boxes') ): $j = 0; while( have_rows('team_boxes') ) : the_row(); 
                         $j++; 
                         $teamName = get_sub_field('team_name');
@@ -84,7 +84,7 @@
                     </div>
                   </div>
 
-                  <div class="d-half m-whole p-relative">
+                  <div class="d-half m-whole p-relative reveal-child">
                     <?php if( have_rows('team_boxes') ): $k = 0; while( have_rows('team_boxes') ) : the_row(); $k++;
                       $img = get_sub_field('team_portrait');
                       $teamName = get_sub_field('team_name');
