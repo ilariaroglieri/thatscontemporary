@@ -140,6 +140,14 @@ jQuery(document).ready(function($) {
     $('.place-img-container').removeClass('visible');
   });
 
+  // --- club benefits
+  $('.benefit-title').mouseenter(function() {
+    $('.place-img-container').removeClass('visible');
+    $(this).parent().parent().find('.benefit-content').addClass('visible');
+  }).mouseleave(function() {
+    $('.benefit-content').removeClass('visible');
+  });
+
   // --- team tabs
   $('.team-name').click(function() {
     var val = $(this).attr('data-id'); 
@@ -162,7 +170,6 @@ jQuery(document).ready(function($) {
   });
 
   // scroll reveal
-
   ScrollReveal().reveal('.reveal-module', { 
     interval: 300, 
     duration: 600,

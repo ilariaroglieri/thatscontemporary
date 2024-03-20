@@ -1054,6 +1054,40 @@ body.page-notebook #article-header .dot-link {
       height: 100%;
       background-color: #3D374A; }
 
+.page-id-16.page-club-thats {
+  background-color: #DEF5E1; }
+  .page-id-16.page-club-thats .single-benefit .benefit-title {
+    cursor: pointer;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    -ms-transition: color 0.3s;
+    -o-transition: color 0.3s;
+    transition: color 0.3s; }
+    .page-id-16.page-club-thats .single-benefit .benefit-title:hover {
+      color: #be0dbd; }
+  .page-id-16.page-club-thats .single-benefit .benefit-content {
+    opacity: 0;
+    pointer-events: none;
+    height: 0;
+    position: absolute;
+    right: 0;
+    width: 50%;
+    color: #be0dbd;
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -ms-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s; }
+    .page-id-16.page-club-thats .single-benefit .benefit-content .benefit-img-container {
+      max-height: 200px;
+      object-fit: contain; }
+      .page-id-16.page-club-thats .single-benefit .benefit-content .benefit-img-container img {
+        height: 100%;
+        width: auto; }
+    .page-id-16.page-club-thats .single-benefit .benefit-content.visible {
+      opacity: 1;
+      height: 100%; }
+
 #footer-title {
   background-color: #DEF5E1; }
 

@@ -836,6 +836,42 @@ img {
   }
 }
 
+// club thats
+.page-id-16.page-club-thats {
+  background-color: #DEF5E1;
+  .single-benefit {
+    .benefit-title {
+      cursor: pointer;
+      @include transition(color .3s);
+      &:hover {
+        color: $color3;
+      }
+    }
+    .benefit-content {
+      opacity: 0;
+      pointer-events: none;
+      height: 0;
+      position: absolute;
+      right: 0;
+      width: 50%;
+      color: $color3;
+      @include transition(opacity .3s);
+      .benefit-img-container {
+        max-height: 200px;
+        object-fit: contain;
+        img {
+          height: 100%;
+          width: auto;
+        }
+      }
+      &.visible {
+        opacity: 1;
+        height: 100%;
+      }
+    }
+  }
+}
+
 #footer-title {
   background-color: #DEF5E1;
 }
