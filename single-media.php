@@ -68,7 +68,7 @@ Template Post Type: post
               <!-- quote module -->
               <?php if( get_row_layout() == 'quote' ): ?>
 
-                <div class="text-container spacing-t-4">
+                <div class="reveal-module text-container spacing-t-4">
                   <div class="d-flex flex-row">
 
                     <div class="d-whole">
@@ -86,7 +86,7 @@ Template Post Type: post
                 ?>
 
                 <?php foreach( $images as $i => $img ): ?>
-                  <div class="img-container spacing-t-4">
+                  <div class="reveal-module  img-container spacing-t-4">
                     <div class="d-flex flex-row">
                       <div class="d-whole">
                         <img src="<?= $img['url']; ?>" />
@@ -98,9 +98,9 @@ Template Post Type: post
               <?php elseif( get_row_layout() == 'bio_data' ): 
                 $text = get_sub_field('bio_text'); ?>
 
-                <div class="info-container spacing-t-4">
+                <div class="reveal-module info-container spacing-t-4">
                   <div class="d-flex flex-row m-column">
-                    <div class="d-half m-whole">
+                    <div class="d-half m-whole reveal-child ">
                       <p class="label short uppercase light s-xxsmall">Bio dell'autore</p>
 
                       <div class="wywiwyg s-xxsmall spacing-t-1">
@@ -109,7 +109,7 @@ Template Post Type: post
                     </div>
 
                     <?php if( have_rows('artwork_data') ): ?>
-                      <div class="d-half m-whole">
+                      <div class="d-half m-whole reveal-child ">
                         <p class="label short uppercase light s-xxsmall">Scheda dell'opera</p>
 
                         <?php while( have_rows('artwork_data') ): the_row();
@@ -143,13 +143,13 @@ Template Post Type: post
           $circular_prev = get_previous_post() ? get_previous_post() : get_posts("post_type=" . get_query_var( 'post_type' ) . "&numberposts=1&order=DESC")[0];
           $circular_next = get_next_post() ? get_next_post() : get_posts( "post_type=" . get_query_var( 'post_type' ) . "&numberposts=1&order=ASC")[0];
         ?>
-        <div class="navi d-flex d-column border-top spacing-t-4 spacing-p-t-3 spacing-b-4">
-          <div class="full-width d-whole d-flex flex-row end">
+        <div class="navi d-flex d-column border-top spacing-t-4 spacing-p-t-3 spacing-b-4 reveal-module">
+          <div class="full-width d-whole d-flex flex-row end reveal-child">
             <div class="dot-link previous d-half m-whole">
               <a class="s-large uppercase light" href="<?= get_permalink($circular_next->ID); ?>"><span class="underline"><?= $circular_next->post_title; ?></span></a>
             </div>
           </div>
-          <div class="full-width d-whole d-flex flex-row start spacing-t-4">
+          <div class="full-width d-whole d-flex flex-row start spacing-t-4 reveal-child">
             <div class="dot-link next d-half m-whole">
               <a class="s-large uppercase light" href="<?= get_permalink($circular_prev->ID); ?>"><span class="underline"><?= $circular_prev->post_title; ?></span></a>
             </div>

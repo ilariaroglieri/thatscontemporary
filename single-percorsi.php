@@ -22,10 +22,10 @@ Template Post Type: post
         <?php
         $featured_places = get_field('featured_places');
         if( $featured_places ): ?>
-          <div id="article_feat_places" class="spacing-t-4">
+          <div id="article_feat_places" class="spacing-t-4 reveal-module">
             <p class="uppercase medium s-xsmall"><?php _e("Take note dei luoghi d’arte da non perdere", 'thats-theme'); ?></p>
             <?php foreach( $featured_places as $post ): setup_postdata($post); ?>
-              <div class="d-flex flex-row t-column spacing-t-2 spacing-b-2">
+              <div class="d-flex flex-row t-column spacing-t-2 spacing-b-2 reveal-child">
                 <div class="d-seven-twelfth t-whole">
                   <div class="wysiwyg uppercase s-large">
                     <h2 class="place-title light d-inline-block f-left"><a class="color-hover underline" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
@@ -44,16 +44,16 @@ Template Post Type: post
         <?php endif; ?>
 
         <!-- percorsi info -->
-        <div id="article_tour_info" class="spacing-t-4 border-top">
+        <div id="article_tour_info" class="spacing-t-4 border-top reveal-module">
           <div class="d-flex flex-row m-column spacing-t-1">
-            <div class="d-two-twelfth m-whole  border-right">
+            <div class="d-two-twelfth m-whole  border-right reveal-child">
               <p class="light s-xsmall"><?php _e("Durata", 'thats-theme'); ?>: <?php the_field('duration'); ?></p>
             </div>
-            <div class="d-five-twelfth m-whole border-right">
+            <div class="d-five-twelfth m-whole border-right reveal-child">
               <p class="light s-xsmall spacing-b-2"><?php _e("Guarda il percorso direttamente dal tuo smartphone.", 'thats-theme'); ?></p>
               <a class="light s-xsmall underline uppercase italic color-hover" href="<?php the_field('link_to_map'); ?>"><?php _e("Percorso", 'thats-theme'); ?></a>
             </div>
-            <div class="d-five-twelfth m-whole">
+            <div class="d-five-twelfth m-whole reveal-child">
               <p class="light s-xsmall spacing-b-2"><?php _e("Vuoi essere accompagnata/o da un art insider di That’s nel tuo tour d’arte?", 'thats-theme'); ?></p>
               <a class="light s-xsmall underline uppercase italic color-hover" href="mailto:info@thatscontemporary.com ?>"><?php _e("Contattaci", 'thats-theme'); ?></a>
             </div>
@@ -65,16 +65,16 @@ Template Post Type: post
         <?php
         $surrounding_places = get_field('surrounding_places');
         if( $surrounding_places ): ?>
-          <div id="article_surrounding_places" class="spacing-t-4">
+          <div id="article_surrounding_places" class="spacing-t-4 reveal-module">
             <div class="d-flex flex-row">
-              <div class="d-two-thirds m-whole">
+              <div class="d-two-thirds m-whole reveal-child">
                 <div class="wysiwyg light s-big uppercase"><?php the_field('surroundings_text'); ?></div>
               </div>
             </div>
 
-            <div class="d-flex flex-row wrap spacing-t-4">
+            <div class="d-flex flex-row wrap spacing-t-4 reveal-module">
               <?php foreach( $surrounding_places as $post ): setup_postdata($post); ?>
-                <div class="surr-place-container d-half m-whole d-flex spacing-b-2">
+                <div class="surr-place-container d-half m-whole d-flex spacing-b-2 reveal-child">
                   <?php $thumb = get_the_post_thumbnail_url(); ?>
                   <div class="surr-place-img" style="background-image: url('<?= $thumb; ?>');">
                   </div>
@@ -88,7 +88,7 @@ Template Post Type: post
                 </div>
               <?php endforeach; ?>
 
-              <div class="surr-place-container submit d-half m-whole d-flex spacing-b-2">
+              <div class="surr-place-container submit d-half m-whole d-flex spacing-b-2 reveal-child">
                 <div class="surr-place-img"></div>
                 <div class="wysiwyg s-small uppercase">
                   <?php $submittxt = get_field('percorsi_articles','options'); ?>

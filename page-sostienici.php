@@ -12,7 +12,7 @@
           <?php if( get_row_layout() == 'text_row' ):
             $text = get_sub_field('text');
           ?>
-            <div class="flex-row d-flex spacing-t-4 spacing-b-4">
+            <div class="flex-row d-flex spacing-t-4 spacing-b-4 reveal-module">
               <div class="d-two-twelfth t-hidden"></div>
 
               <div class="d-eight-twelfth t-whole">
@@ -28,10 +28,10 @@
           <?php elseif( get_row_layout() == 'image_row' ): 
             $images = get_sub_field('images'); ?>
 
-            <div class="flex-row d-flex space-evenly spacing-t-4 spacing-b-4">
+            <div class="flex-row d-flex space-evenly spacing-t-4 spacing-b-4 reveal-module">
 
               <?php if( $images ): foreach( $images as $image ): ?>
-                <div class="d-flex d-column">
+                <div class="d-flex d-column reveal-child">
                   <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                   <p class="spacing-t-1 uppercase s-xxsmall reg"><?php echo esc_html($image['caption']); ?></p>
                 </div>
@@ -49,13 +49,13 @@
         $partnership = get_field('donazione_partnership');
       ?>
 
-      <div class="donations container border-top spacing-b-4">
+      <div class="donations container border-top spacing-b-4 reveal-module">
         <div class="flex-row d-flex spacing-p-t-2 spacing-p-b-2">
-          <div class="d-five-twelfth t-whole">
+          <div class="d-five-twelfth t-whole reveal-child">
             <h2 class="donation-title s-large uppercase"><?= $singola['donazione_singola_-_titolo_sezione']; ?></h2>
           </div>
 
-          <div class="donation-tab d-seven-twelfth t-whole">
+          <div class="donation-tab d-seven-twelfth t-whole reveal-child">
             <div class="donation-text baseline visible d-flex t-column" data-tab="paypal">
               <div class="d-two-thirds t-whole">
                 <div class="wysiwyg s-small">
@@ -88,15 +88,15 @@
         </div>
       </div>
 
-      <div class="donations container border-top spacing-t-4 spacing-b-4">
+      <div class="donations container border-top spacing-t-4 spacing-b-4 reveal-module">
         <div class="flex-row d-flex spacing-p-t-2 spacing-p-b-2">
-          <div class="d-five-twelfth t-whole">
+          <div class="d-five-twelfth t-whole reveal-child">
             <h2 class="donation-title s-large uppercase"><?= $partnership['titolo_donazione_partner']; ?></h2>
           </div>
 
           <div class="donation-tab d-seven-twelfth t-whole">
             <div class="donation-text baseline visible d-flex t-column">
-              <div class="d-two-thirds t-whole">
+              <div class="d-two-thirds t-whole reveal-child">
                 <div class="wysiwyg s-small">
                   <?= $partnership['testo_donazione_partner']; ?>
                 </div>
