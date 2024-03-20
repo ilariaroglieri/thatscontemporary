@@ -730,21 +730,22 @@ body.page-notebook #article-header .dot-link {
 .highlight {
   background-color: #FFFCD5; }
 
-#filters-container .main-cat {
+#filters-container .main-cat a {
   padding: 10px 0;
   border: 1px solid #3D374A;
   background-color: white;
+  display: block;
   -webkit-transition: background-color 0.3s;
   -moz-transition: background-color 0.3s;
   -ms-transition: background-color 0.3s;
   -o-transition: background-color 0.3s;
   transition: background-color 0.3s; }
-  #filters-container .main-cat:hover {
+  #filters-container .main-cat a:hover, #filters-container .main-cat a.active {
     background-color: #FFFCD5; }
-#filters-container .tag {
+#filters-container .main-tag {
   padding-top: 10px;
   border-bottom: 1px solid #3D374A; }
-  #filters-container .tag .tag-item {
+  #filters-container .main-tag .tag-item {
     display: inline-block;
     padding: 0 40px 10px;
     background-color: white;
@@ -753,7 +754,7 @@ body.page-notebook #article-header .dot-link {
     -ms-transition: background-color 0.3s;
     -o-transition: background-color 0.3s;
     transition: background-color 0.3s; }
-    #filters-container .tag .tag-item:hover {
+    #filters-container .main-tag .tag-item:hover, #filters-container .main-tag .tag-item.active {
       background-color: #FFFCD5; }
 
 .two-img-container .vertical {

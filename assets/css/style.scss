@@ -452,16 +452,17 @@ img {
 }
 
 #filters-container {
-  .main-cat {
+  .main-cat a {
     padding: $half-spacing 0;
     border: 1px solid $color1;
     background-color: white;
+    display: block;
     @include transition(background-color .3s);
-    &:hover {
+    &:hover, &.active {
       background-color: #FFFCD5;
     }
   }
-  .tag {
+  .main-tag {
     padding-top: $half-spacing;
     border-bottom: 1px solid $color1;
     .tag-item {
@@ -469,7 +470,7 @@ img {
       padding: 0 $double-spacing $half-spacing;
       background-color: white;
       @include transition(background-color .3s);
-      &:hover {
+      &:hover, &.active {
         background-color: #FFFCD5;
       }
     }

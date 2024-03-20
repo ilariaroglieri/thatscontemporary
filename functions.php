@@ -22,6 +22,9 @@ function jquery_scripts() {
   wp_enqueue_script( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '1.0.0', true );
   wp_enqueue_script( 'scrollreveal', 'https://unpkg.com/scrollreveal', array(), '', true );
   wp_enqueue_script( 'custom', get_stylesheet_directory_uri() . '/assets/js/custom.js', array(), '1.0.0', true );
+  wp_localize_script('custom', 'wpAjax',  array(
+   'ajaxUrl' => admin_url('admin-ajax.php')  )
+ );
 }
 
 add_action( 'wp_enqueue_scripts', 'jquery_scripts' );
@@ -96,6 +99,35 @@ function slugify($text, string $divider = '-') {
   }
   return $text;
 }
+
+// ajax
+function filterCat() {
+  $cat = $_POST['category'];
+  $tag = $_POST['tag'];
+
+  $args = array(
+    'post_type' => 'post',
+    'posts_per_page' => -1,
+    'cat' => $cat,
+    'orderby' => 'date', 
+    'order' => 'DESC',
+  );
+  
+  $filteredArticles = new WP_Query( $args ); 
+
+  if($filteredArticles->have_posts()):
+    while($filteredArticles->have_posts()) : $filteredArticles->the_post();
+      include('snippets/articles-query.php');
+    endwhile;
+  else:
+    echo 'No results';
+  endif;
+  wp_reset_postdata();
+
+  die();
+}
+add_action('wp_ajax_filterCat', 'filterCat');
+add_action('wp_ajax_nopriv_filterCat', 'filterCat');
 
 // Register Custom Taxonomy
 function main_tag_taxonomy() {

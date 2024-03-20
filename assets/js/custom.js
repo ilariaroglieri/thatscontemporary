@@ -92,6 +92,45 @@ jQuery(document).ready(function($) {
     },
   });
 
+  // ajax filter
+  $(document).on('click','.cat-item, .tag-item', function() {
+    // var tax = $(this).attr('data-type');
+
+    // $('a[data-type='+ tax + ']').removeClass('active');
+    $(this).toggleClass('active');
+
+    var catTerm = $('a[data-type="category"].active');
+    var tagTerm = $('a[data-type="main_tag"].active');
+
+    var catTerms = [];
+    var tagTerms = [];
+
+    for (var i = 0; i < catTerm.length; i++) {
+      catTerms.push($(catTerm[i]).data('id'));
+    }
+
+    for (var i = 0; i < tagTerm.length; i++) {
+      tagTerms.push($(tagTerm[i]).data('id'));
+    }
+
+    console.log(catTerms, tagTerms);
+
+
+    $.ajax({
+      type: 'POST',
+      url: wpAjax.ajaxUrl,
+      dataType: 'html',
+      data: {
+        action: 'filterCat',
+        category: catTerms,
+        tag: tagTerms,
+      },
+      success: function(results) {
+        $('#articles-container > .d-flex').html(results);
+      }
+    });
+  });
+
   // --- percorsi articles
   $('.place-title').mouseenter(function() {
     $('.place-img-container').removeClass('visible');

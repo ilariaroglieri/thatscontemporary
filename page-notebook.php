@@ -38,18 +38,18 @@
         <?php $cats = get_categories(); ?>
         <?php foreach($cats as $cat) : ?>
           <li class="main-cat d-one-third m-whole">
-            <a class="cat-item s-xxsmall uppercase" href="#!" data-slug="<?= $cat->slug; ?>">
+            <a class="cat-item s-xxsmall uppercase" href="#!" data-type="category" data-id="<?= $cat->cat_ID; ?>">
               <?= $cat->name; ?>
             </a>
           </li>
         <?php endforeach; ?>
       </ul>
 
-       <ul class="cat-filter flex-row d-flex wrap t-center">
+       <ul class="tag-filter flex-row d-flex wrap t-center">
         <?php $tags = get_terms( 'main_tag' ); ?>
         <?php foreach($tags as $tag) : ?>
-          <li class="tag d-one-third m-whole">
-            <a class="tag-item s-xxsmall uppercase" href="#!" data-slug="<?= $tag->slug; ?>">
+          <li class="main-tag d-one-third m-whole">
+            <a class="tag-item s-xxsmall uppercase" href="#!" data-type="main_tag" data-id="<?= $tag->term_id; ?>">
               <?= $tag->name; ?>
             </a>
           </li>
@@ -65,7 +65,7 @@
       'order' => 'ASC',
       'post_type' => 'post',
       'post_status' => 'publish',
-      'suppress_filters' => true 
+      'suppress_filters' => true,
     );
 
     $bigLoop = new WP_Query( $args ); 
@@ -73,15 +73,8 @@
       <div id="articles-container" class="spacing-t-4">
         <div class="d-flex flex-row wrap">
           <?php while ( $bigLoop->have_posts() ) : $bigLoop->the_post(); ?>
-            <div id="post-<?php the_ID(); ?>" class="article-container d-one-third m-whole d-flex d-column spacing-b-2 reveal-module">
-              <?php $thumb = get_the_post_thumbnail_url(); ?>
-              <div class="dot-link">
-                <a class="p-absolute overall" href="<?= the_permalink(); ?>"></a>
-                <div class="article-img reveal-child" style="background-image: url('<?= $thumb; ?>');">
-                </div>
-                <h4 class="s-large uppercase light spacing-t-1 reveal-child"><?php the_title(); ?></h4>
-              </div>
-            </div>
+            
+            <?php include('snippets/articles-query.php'); ?>
         
           <?php endwhile; ?>
         </div>
