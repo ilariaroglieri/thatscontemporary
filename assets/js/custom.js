@@ -127,6 +127,7 @@ jQuery(document).ready(function($) {
       },
       success: function(results) {
         $('#articles-container > .d-flex').html(results);
+        ScrollReveal().sync();
       }
     });
   });
@@ -161,6 +162,7 @@ jQuery(document).ready(function($) {
   });
 
   // scroll reveal
+
   ScrollReveal().reveal('.reveal-module', { 
     interval: 300, 
     duration: 600,

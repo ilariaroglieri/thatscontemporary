@@ -108,10 +108,23 @@ function filterCat() {
   $args = array(
     'post_type' => 'post',
     'posts_per_page' => -1,
-    'cat' => $cat,
     'orderby' => 'date', 
     'order' => 'DESC',
   );
+
+  if (isset($cat)) {
+    $args['cat'] = $cat;
+  }
+
+  if (isset($tag)) {
+    $args['tax_query'] = array(
+      array( 
+        'taxonomy' => 'main_tag', 
+        'field'    => 'term_id', 
+        'terms'    => $tag, 
+      ), 
+    );
+  }
   
   $filteredArticles = new WP_Query( $args ); 
 
@@ -120,7 +133,7 @@ function filterCat() {
       include('snippets/articles-query.php');
     endwhile;
   else:
-    echo 'No results';
+    include('snippets/empty-query.php');
   endif;
   wp_reset_postdata();
 

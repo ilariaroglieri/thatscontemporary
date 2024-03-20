@@ -523,6 +523,9 @@ body {
   overflow-x: hidden;
   text-rendering: geometricPrecision; }
 
+html.sr .reveal-module {
+  visibility: hidden; }
+
 p {
   margin: 0;
   margin-bottom: 20px;
