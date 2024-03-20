@@ -15,28 +15,49 @@
       <div class="d-three-twelfth t-hidden"></div>
     </div>
 
-    <?php $args = array(
-      'posts_per_page' => 1,
-      'offset' => 0,
-      'orderby' => 'date',
-      'order' => 'ASC',
-      'post_type' => 'post',
-      'post_status' => 'publish',
-      'suppress_filters' => true 
-    );
+    <?php
+    $hightlightArticle = get_field('highlight_article');
+    if( $hightlightArticle ):
 
-    $mostRecentPost = new WP_Query( $args ); 
-    if ( $mostRecentPost->have_posts() ) : while ( $mostRecentPost->have_posts() ) : $mostRecentPost->the_post(); ?>
+      $post = $hightlightArticle;
+      setup_postdata($post); ?>
 
-      <?php include('snippets/article-opening.php'); ?>
-      <?php include('snippets/article-header.php'); ?>
-      
-    <?php endwhile; endif;
-    wp_reset_postdata(); ?>
+        <?php include('snippets/article-opening.php'); ?>
+        <?php include('snippets/article-header.php'); ?>
+    
+    <?php endif; wp_reset_postdata(); ?>
 
 
-    <!-- FILTERS HERE -->
+    <!-- filter -->
+    <div id="filters-container" class="spacing-t-4">
+      <div class="highlight t-center">
+        <p class="wysiwyg light uppercase s-xxsmall"><?php _e("Utilizza i filtri che abbiamo selezionato di seguito per trovare ciò che più ti interessa.", 'thats-theme'); ?></p>
+      </div>
 
+      <ul class="cat-filter flex-row d-flex m-column spacing-t-4 t-center">
+        <?php $cats = get_categories(); ?>
+        <?php foreach($cats as $cat) : ?>
+          <li class="main-cat d-one-third m-whole">
+            <a class="cat-item s-xxsmall uppercase" href="#!" data-slug="<?= $cat->slug; ?>">
+              <?= $cat->name; ?>
+            </a>
+          </li>
+        <?php endforeach; ?>
+      </ul>
+
+       <ul class="cat-filter flex-row d-flex wrap t-center">
+        <?php $tags = get_terms( 'main_tag' ); ?>
+        <?php foreach($tags as $tag) : ?>
+          <li class="tag d-one-third m-whole">
+            <a class="tag-item s-xxsmall uppercase" href="#!" data-slug="<?= $tag->slug; ?>">
+              <?= $tag->name; ?>
+            </a>
+          </li>
+        <?php endforeach; ?>
+      </ul>
+    </div>
+
+    <!-- articles query -->
     <?php $args = array(
       'posts_per_page' => -1,
       'offset' => 0,
@@ -68,15 +89,6 @@
     <?php endif; wp_reset_postdata(); ?>
 
   </div>  
-
-  <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
-  <?php endwhile; else: ?>
-
-    <h2>Woops...</h2>
-    <p>Sorry, no posts found.</p>
-
-  <?php endif; ?>
 
 </section>
 

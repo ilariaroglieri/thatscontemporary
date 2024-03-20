@@ -15,9 +15,11 @@ Template Post Type: post
 
       <!-- content -->
       <div id="article-opening">
-        <?php $mainTag = get_the_terms( $post->ID, 'main_tag' ); ?>
+        <?php 
+          $mainTag = get_the_terms( $post->ID, 'main_tag' ); 
+          $cat = get_the_category($id); ?>
         <div class="article-tags t-center">
-          <p class="s-xsmall uppercase tag label"><?= $mainTag[0]->name; ?></p>
+          <p class="s-xsmall uppercase tag label"><?= $cat[0]->name; ?>: <?= $mainTag[0]->name; ?></p>
         </div>
 
         <div class="article-metadata d-flex">
