@@ -441,12 +441,12 @@ img {
   .article-cover {
     height: calc(100vh - 300px);
   }
-  .article-metadata {
-    background-color: $color2;
-    p {
-      margin-left: $double-spacing;
-      margin-bottom: 0;
-    }
+}
+.article-metadata {
+  background-color: $color2;
+  p {
+    margin-left: $double-spacing;
+    margin-bottom: 0;
   }
 }
 

@@ -5,10 +5,7 @@
 <div id="article-opening" class="spacing-t-4">
   <div class="article-cover full-width" style="background-image: url('<?= $thumb; ?>');"></div>
 
-  <div class="article-metadata d-flex">
-    <p class="s-xsmall light"><?= get_the_date( 'd M Y' ); ?></p>
-    <p class="s-xsmall light"><?php the_field('article_author'); ?></p>
-  </div>
+  <?php include('snippets/article-metadata.php'); ?>
 
    <?php 
     $mainTag = get_the_terms( $id, 'main_tag' ); 

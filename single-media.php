@@ -22,10 +22,7 @@ Template Post Type: post
           <p class="s-xsmall uppercase tag label"><?= $cat[0]->name; ?>: <?= $mainTag[0]->name; ?></p>
         </div>
 
-        <div class="article-metadata d-flex">
-          <p class="s-xsmall light"><?= get_the_date( 'd M Y' ); ?></p>
-          <p class="s-xsmall light"><?php the_field('article_author'); ?></p>
-        </div>
+        <?php include('snippets/article-metadata.php'); ?>
       </div>
 
       <div id="article-contents" class="spacing-t-4" >
