@@ -839,36 +839,72 @@ img {
 // club thats
 .page-id-16.page-club-thats {
   background-color: #DEF5E1;
-  .single-benefit {
-    .benefit-title {
-      cursor: pointer;
-      @include transition(color .3s);
-      &:hover {
-        color: $color3;
-      }
-    }
-    .benefit-content {
-      opacity: 0;
-      pointer-events: none;
-      height: 0;
-      position: absolute;
-      right: 0;
-      width: 50%;
+  #club-thats, #footer-title {
+    display: none;
+  }
+}
+.single-benefit {
+  .benefit-title {
+    cursor: pointer;
+    @include transition(color .3s);
+    &:hover {
       color: $color3;
-      @include transition(opacity .3s);
-      .benefit-img-container {
-        max-height: 200px;
-        object-fit: contain;
-        img {
-          height: 100%;
-          width: auto;
-        }
-      }
-      &.visible {
-        opacity: 1;
+    }
+  }
+  .benefit-content {
+    opacity: 0;
+    pointer-events: none;
+    height: 0;
+    position: absolute;
+    right: 0;
+    width: 50%;
+    color: $color3;
+    @include transition(opacity .3s);
+    .benefit-img-container {
+      max-height: 200px;
+      object-fit: contain;
+      img {
         height: 100%;
+        width: auto;
+        max-width: 100%;
       }
     }
+    &.visible {
+      opacity: 1;
+      height: 100%;
+    }
+  }
+}
+
+.dot-before {
+  display: flex;
+  & > * {
+    width: calc(100% - 40px);
+  }
+  &:before {
+    content:'';
+    display: flex;
+    width: 30px;
+    height: 30px;
+    background-color: $color1;
+    border-radius: 50%;
+    margin-right: $half-spacing;
+    @include transition(background-color .3s);
+  }
+  &.color-hover:hover:before {
+    background-color: $color3;
+  }
+}
+
+.services-box {
+  width: 25%;
+  margin: 0;
+  padding: $double-spacing;
+  aspect-ratio: 1/1.1;
+  &.image-box {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
 
