@@ -605,7 +605,8 @@ img {
   z-index: 100; }
 
 #header-container {
-  margin-top: calc(1.3vw + 10px); }
+  margin-top: calc(1.3vw + 10px);
+  background-color: white; }
 
 #header #logo {
   width: 33vw; }
@@ -1054,6 +1055,15 @@ body.page-notebook #article-header .dot-link {
       width: 1px;
       height: 100%;
       background-color: #3D374A; }
+
+#project-header {
+  background-color: white; }
+
+#project-txt {
+  height: 73vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between; }
 
 .page-id-16.page-club-thats {
   background-color: #DEF5E1; }

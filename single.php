@@ -11,11 +11,11 @@
 
         <?php include('snippets/article-opening.php'); ?>
 
-        <?php $subtitle = get_field('article_subtitle'); ?>
         <div id="article-header" class="spacing-t-4">
           <!-- title -->
           <div class="d-flex flex-row t-column">
             <div class="d-two-thirds t-whole">
+              <?php $subtitle = get_field('article_subtitle'); ?>
               <h1 class="s-big light uppercase"><?php the_title(); if ($subtitle): echo ' '.($subtitle); endif; ?></h1>
             </div>
           </div>
@@ -25,7 +25,7 @@
             <div class="d-one-twelfth t-hidden"></div>
             <div class="d-seven-twelfth t-whole spacing-t-8">
               <div class="wysiwyg s-medium light underline">
-                <?php the_content() ?>
+                <?php the_content(); ?>
               </div>
             </div>
           </div>
@@ -177,32 +177,8 @@
 
 
       <!-- article footer -->
-      <?php if( have_rows('bio_credits') ): ?>
-        <div id="article-footer" class="container spacing-t-4">
-          <div class="d-flex flex-row t-column">
-            <?php while( have_rows('bio_credits') ) : the_row();
-              $title = get_sub_field('module_title'); 
-              $text = get_sub_field('module_text');
-              $img = get_sub_field('module_image');
-            ?>
-
-            <div class="d-three-twelfth t-whole reveal-module">
-              <p class="reveal-child label short uppercase light s-xxsmall"><?= $title; ?></p>
-
-              <div class="reveal-child wywiwyg s-xxsmall spacing-t-1">
-                <?= $text; ?>
-              </div>
-
-              <?php if ($img): ?>
-                <img class="reveal-child spacing-t-2" src="<?= $img['url']; ?>" />
-              <?php endif; ?>
-            </div>
-
-            <?php endwhile; ?>
-          </div>
-        </div>
-      <?php endif; ?>
-
+      <?php include('snippets/bio-credits.php'); ?>
+      
       <?php include('snippets/navi.php'); ?>
 
   <?php endwhile; else: ?>

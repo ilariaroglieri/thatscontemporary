@@ -296,6 +296,7 @@ img {
 
 #header-container {
   margin-top: calc(1.3vw + #{$half-spacing});
+  background-color: white;
 }
 
 #header {
@@ -834,6 +835,18 @@ img {
       background-color: $color1;
     }
   }
+}
+
+// single project
+#project-header {
+  background-color: white;
+}
+
+#project-txt {
+  height: 73vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
 }
 
 // club thats
