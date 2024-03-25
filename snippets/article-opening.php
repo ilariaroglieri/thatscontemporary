@@ -5,7 +5,7 @@
 <div id="article-opening" class="spacing-t-4">
   <div class="article-cover full-width" style="background-image: url('<?= $thumb; ?>');"></div>
 
-  <?php include('snippets/article-metadata.php'); ?>
+  <?php include('article-metadata.php'); ?>
 
    <?php 
     $mainTag = get_the_terms( $id, 'main_tag' ); 
