@@ -825,9 +825,10 @@ body.page-notebook #article-header .dot-link {
     margin-top: 10px;
     background-color: #3D374A;
     border-radius: 50%;
-    width: 48px;
-    height: 48px;
+    width: 3.5vw;
+    height: 3.5vw;
     background-image: url("../img/tc_arrow.svg");
+    background-size: cover;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
@@ -840,7 +841,7 @@ body.page-notebook #article-header .dot-link {
       margin-bottom: 10px; }
   .dot-link:hover:after {
     background-color: #be0dbd;
-    background-position: 48px; }
+    background-position: 3.5vw; }
 
 .button {
   border: none;
@@ -995,6 +996,19 @@ body.page-notebook #article-header .dot-link {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; }
+
+.project {
+  padding: 20px;
+  padding-bottom: 40px;
+  border: 1px solid #3D374A; }
+  .project .article-img {
+    aspect-ratio: 1.5/1; }
+  .project .dot-link h4 {
+    width: calc(100% - 5vw); }
+  .project .dot-link:after {
+    position: absolute;
+    right: 0;
+    bottom: -1.25vw; }
 
 .donations {
   background-color: #E6F499; }

@@ -70,6 +70,8 @@
       </div>
     </div>
 
+    <?php include('snippets/navi.php'); ?>
+
   <?php endwhile; else: ?>
 
     <h2>Woops...</h2>
@@ -79,6 +81,6 @@
 
 </section>
 
-<?php include('snippets/related.php'); ?>
+<?php include('snippets/related-project.php'); ?>
 
 <?php get_footer(); ?>
