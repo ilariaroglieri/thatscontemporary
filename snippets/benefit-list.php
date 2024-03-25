@@ -8,7 +8,7 @@
 
     <div class="single-benefit d-flex flex-row m-column reveal-child">
       <div class="d-half t-whole">
-        <div class="dot-before"><h2 class="benefit-title uppercase s-large light color-hover spacing-b-2"><?= $title; ?></h2></div>
+        <h2 class="dot-before benefit-title uppercase s-large light color-hover spacing-b-2"><?= $title; ?></h2>
       </div>
       <div class="benefit-content d-flex flex-row">
         <div class="d-half t-whole">

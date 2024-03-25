@@ -844,6 +844,7 @@ img {
   }
 }
 .single-benefit {
+  position: relative;
   .benefit-title {
     cursor: pointer;
     @include transition(color .3s);
@@ -884,8 +885,8 @@ img {
   &:before {
     content:'';
     display: flex;
-    width: 30px;
-    height: 30px;
+    width: 3.2vw;
+    height: 3.2vw;
     background-color: $color1;
     border-radius: 50%;
     margin-right: $half-spacing;

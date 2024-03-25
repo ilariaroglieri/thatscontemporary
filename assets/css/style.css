@@ -1060,38 +1060,40 @@ body.page-notebook #article-header .dot-link {
   .page-id-16.page-club-thats #club-thats, .page-id-16.page-club-thats #footer-title {
     display: none; }
 
-.single-benefit .benefit-title {
-  cursor: pointer;
-  -webkit-transition: color 0.3s;
-  -moz-transition: color 0.3s;
-  -ms-transition: color 0.3s;
-  -o-transition: color 0.3s;
-  transition: color 0.3s; }
-  .single-benefit .benefit-title:hover {
-    color: #be0dbd; }
-.single-benefit .benefit-content {
-  opacity: 0;
-  pointer-events: none;
-  height: 0;
-  position: absolute;
-  right: 0;
-  width: 50%;
-  color: #be0dbd;
-  -webkit-transition: opacity 0.3s;
-  -moz-transition: opacity 0.3s;
-  -ms-transition: opacity 0.3s;
-  -o-transition: opacity 0.3s;
-  transition: opacity 0.3s; }
-  .single-benefit .benefit-content .benefit-img-container {
-    max-height: 200px;
-    object-fit: contain; }
-    .single-benefit .benefit-content .benefit-img-container img {
-      height: 100%;
-      width: auto;
-      max-width: 100%; }
-  .single-benefit .benefit-content.visible {
-    opacity: 1;
-    height: 100%; }
+.single-benefit {
+  position: relative; }
+  .single-benefit .benefit-title {
+    cursor: pointer;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    -ms-transition: color 0.3s;
+    -o-transition: color 0.3s;
+    transition: color 0.3s; }
+    .single-benefit .benefit-title:hover {
+      color: #be0dbd; }
+  .single-benefit .benefit-content {
+    opacity: 0;
+    pointer-events: none;
+    height: 0;
+    position: absolute;
+    right: 0;
+    width: 50%;
+    color: #be0dbd;
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -ms-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s; }
+    .single-benefit .benefit-content .benefit-img-container {
+      max-height: 200px;
+      object-fit: contain; }
+      .single-benefit .benefit-content .benefit-img-container img {
+        height: 100%;
+        width: auto;
+        max-width: 100%; }
+    .single-benefit .benefit-content.visible {
+      opacity: 1;
+      height: 100%; }
 
 .dot-before {
   display: flex; }
@@ -1100,8 +1102,8 @@ body.page-notebook #article-header .dot-link {
   .dot-before:before {
     content: '';
     display: flex;
-    width: 30px;
-    height: 30px;
+    width: 3.2vw;
+    height: 3.2vw;
     background-color: #3D374A;
     border-radius: 50%;
     margin-right: 10px;

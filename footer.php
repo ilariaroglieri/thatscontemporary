@@ -29,10 +29,10 @@
 				<div class="d-one-twelfth t-hidden"></div>
 
 				<div class="d-two-twelfth t-whole">
-					<a class="dot-before s-medium spacing-b-1" href="<?php echo get_page_link(14); ?>">
+					<a class="dot-before s-medium spacing-b-2" href="<?php echo get_page_link(14); ?>">
 						<?php echo get_the_title(14); ?>
 					</a>
-					<a class="dot-before s-medium spacing-b-1" href="<?php echo get_page_link(16); ?>">
+					<a class="dot-before s-medium spacing-b-2" href="<?php echo get_page_link(16); ?>">
 						<?php echo get_the_title(16); ?>
 					</a>
 				</div>
