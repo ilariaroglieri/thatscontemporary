@@ -27,13 +27,39 @@
 	
 	</head>
 
-	<body <?php body_class(); ?>>
+	<?php 
+		$hidden = is_front_page() ? 'hidden' : '';
+		$isLanding = is_front_page() ? 'landing' : '';
+	?>
+	<body <?php body_class($isLanding); ?>>
 
-		<div id="club-thats" class="p-fixed">
+		<div id="club-thats" class="p-fixed <?= $hidden; ?>">
 			<a class="serif s-small italic uppercase" href="<?php echo get_page_link(16); ?>">
 				<?php _e("Unisciti alla community, iscriviti al Club That's!", 'thats-theme'); ?>
 			</a>
 		</div>
+
+		<?php 
+    $images = get_field('landing_gallery'); 
+
+    if ($images): ?>
+      <div id="landing" class="container-fluid full-height t-center">
+        <div id="logo-landing" class="p-fixed">
+          <?php include('assets/img/thats_contemporary_logo.svg'); ?>
+        </div>
+
+        <div class="images-container">
+	        <?php foreach( $images as $i => $img ): 
+	          list($width, $height) = getimagesize($img['url']);
+	          $orientation = ($width > $height) ? 'horizontal' : 'vertical';
+	          ?>
+	          <div class="img-container spacing-b-1 <?= $orientation; ?>" >
+	          	<img src="<?= $img['url']; ?>" />
+	          </div>
+	        <?php endforeach; ?>
+	      </div>
+      </div>
+    <?php endif; ?>
 
 		<div id="header-container" class="container spacing-t-3 spacing-p-b-4">
 			<div id="header">

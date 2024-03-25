@@ -1,13 +1,20 @@
 function checkScroll() {
-	var currentScrollPos = $(window).scrollTop();
+	var scr = $(window).scrollTop();
 
   if ($('body').hasClass('home')) {
-  	if (currentScrollPos > window.innerHeight) {
-  		$('.icon, #logo, .menu-toggle').removeClass('white');
-    } else {
-  		$('.icon, #logo, .menu-toggle').addClass('white');
-    }
+
+    $('.images-container').on('scroll', function() {
+      if($(this).scrollTop() + ($(this).innerHeight()) >= $(this)[0].scrollHeight) {
+        $('#logo-landing').addClass('scroll-up');
+        window.scrollTo({ top: $(window).innerHeight(), behavior: 'smooth' });
+      } else {
+        $('#logo-landing').removeClass('scroll-up');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
   }
+
 }
 
 //-----------DOCUMENT.READY----------------
@@ -15,18 +22,18 @@ function checkScroll() {
 jQuery(document).ready(function($) {
 
   // scroll events
-  var prevScrollPos = $(window).scrollTop();
+  // var prevScrollPos = $(window).scrollTop();
   $(window).scroll(function() {
     checkScroll();
 
-    var currentScrollPos = $(window).scrollTop();
-    if (prevScrollPos > currentScrollPos && prevScrollPos > 0) {
-      $('#logo').addClass('visible')
-    } else {
-      $('#logo').removeClass('visible')
-    }
+    // var currentScrollPos = $(window).scrollTop();
+    // if (prevScrollPos > currentScrollPos && prevScrollPos > 0) {
+    //   $('#logo').addClass('visible')
+    // } else {
+    //   $('#logo').removeClass('visible')
+    // }
 
-    prevScrollPos = currentScrollPos;
+    // prevScrollPos = currentScrollPos;
   });
 
   checkScroll();
@@ -36,19 +43,12 @@ jQuery(document).ready(function($) {
   $('.menu-toggle').click(function() {
     $(this).toggleClass('open');
     $('div[class*="menu-1"]').toggleClass('active');
-    // check if it's on slider
-  	if ( $('body').hasClass('home') && $(window).scrollTop() < window.innerHeight ) {
-  		console.log('ei!')
-  		$('#logo').addClass('visible').toggleClass('white');
-  		$('.icon, .menu-toggle').toggleClass('white');
-  	}
 
-    if ($(this).hasClass('open') == true) {
-    	// $('.icon, .menu-toggle').removeClass('white');
-    	$('#logo').addClass('visible');
-    } else {
-    	$('#logo').removeClass('visible');
-    }
+    // if ($(this).hasClass('open') == true) {
+    // 	$('#logo').addClass('visible');
+    // } else {
+    // 	$('#logo').removeClass('visible');
+    // }
   });
 
   // --- stacked galleries
