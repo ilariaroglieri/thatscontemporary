@@ -1056,14 +1056,41 @@ body.page-notebook #article-header .dot-link {
       height: 100%;
       background-color: #3D374A; }
 
+.single-project .content {
+  min-height: unset;
+  margin-bottom: 0; }
+
 #project-header {
   background-color: white; }
 
-#project-txt {
-  height: 73vh;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between; }
+.project-txts {
+  margin-left: 40px;
+  max-height: 75vh;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none; }
+  .project-txts #project-txt {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between; }
+
+.sticky {
+  position: sticky;
+  max-height: 75vh;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none; }
+
+.overflow .img-container {
+  width: 100%;
+  height: 75vh;
+  background-repeat: no-repeat; }
+  .overflow .img-container.horizontal {
+    background-size: cover;
+    background-position: center; }
+  .overflow .img-container.vertical {
+    background-size: auto 100%;
+    background-position: left; }
 
 .page-id-16.page-club-thats {
   background-color: #DEF5E1; }
