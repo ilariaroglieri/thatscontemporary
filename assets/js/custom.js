@@ -1,18 +1,24 @@
+function viewportToPixels(value) {
+  var parts = value.match(/([0-9\.]+)(vh|vw)/)
+  var q = Number(parts[1])
+  var side = window[['innerHeight', 'innerWidth'][['vh', 'vw'].indexOf(parts[2])]]
+  return side * (q/100)
+}
+
 function checkScroll() {
-	var scr = $(window).scrollTop();
+  var scr = $(window).scrollTop();
+  var vh = Math.round(window.innerHeight / 100);
 
-  if ($('body').hasClass('home')) {
-
-    $('.images-container').on('scroll', function() {
-      if($(this).scrollTop() + ($(this).innerHeight()) >= $(this)[0].scrollHeight) {
-        $('#logo-landing').addClass('scroll-up');
-        window.scrollTo({ top: $(window).innerHeight(), behavior: 'smooth' });
-      } else {
-        $('#logo-landing').removeClass('scroll-up');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    });
-
+  var tunnelimgs = $('.img-container').length;
+  var tempH = 100*tunnelimgs + 'vh';
+  var tunnelEnd = viewportToPixels(tempH);
+ 
+  if(scr >= (tunnelEnd - 200)) {
+    $('#logo-landing').addClass('scroll-up');
+    $('#landing').addClass('scroll-up');
+  } else {
+    $('#logo-landing').removeClass('scroll-up');
+    $('#landing').removeClass('scroll-up');
   }
 
 }
@@ -22,33 +28,27 @@ function checkScroll() {
 jQuery(document).ready(function($) {
 
   // scroll events
-  // var prevScrollPos = $(window).scrollTop();
   $(window).scroll(function() {
+
     checkScroll();
 
-    // var currentScrollPos = $(window).scrollTop();
-    // if (prevScrollPos > currentScrollPos && prevScrollPos > 0) {
-    //   $('#logo').addClass('visible')
-    // } else {
-    //   $('#logo').removeClass('visible')
-    // }
-
-    // prevScrollPos = currentScrollPos;
   });
 
   checkScroll();
+
+  // tunnel effect slider home
+  if ($('body').hasClass('home')) {
+    var tunnelimgs = $('.img-container').length;
+    var tempH = (100*tunnelimgs) + 'vh';
+    $('.content').css('margin-top', tempH );
+  }
+
 
 
   // --- Hamburger menu
   $('.menu-toggle').click(function() {
     $(this).toggleClass('open');
     $('div[class*="menu-1"]').toggleClass('active');
-
-    // if ($(this).hasClass('open') == true) {
-    // 	$('#logo').addClass('visible');
-    // } else {
-    // 	$('#logo').removeClass('visible');
-    // }
   });
 
   // --- stacked galleries

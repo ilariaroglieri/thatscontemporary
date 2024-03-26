@@ -40,26 +40,29 @@
 		</div>
 
 		<?php 
-    $images = get_field('landing_gallery'); 
+		if (is_front_page()):
+	    $images = get_field('landing_gallery'); 
 
-    if ($images): ?>
-      <div id="landing" class="container-fluid full-height t-center">
-        <div id="logo-landing" class="p-fixed">
-          <?php include('assets/img/thats_contemporary_logo.svg'); ?>
-        </div>
+	    if ($images): 
+	    	$n = [1,2,3];
+        shuffle($n);
 
-        <div class="images-container">
-	        <?php foreach( $images as $i => $img ): 
-	          list($width, $height) = getimagesize($img['url']);
-	          $orientation = ($width > $height) ? 'horizontal' : 'vertical';
-	          ?>
-	          <div class="img-container spacing-b-1 <?= $orientation; ?>" >
-	          	<img src="<?= $img['url']; ?>" />
-	          </div>
-	        <?php endforeach; ?>
+	    	?>
+	      <div id="landing" class="container-fluid p-fixed full-height t-center">
+	        <div id="logo-landing" class="p-fixed">
+	          <?php include('assets/img/thats_contemporary_logo.svg'); ?>
+	        </div>
+
+	        <div id="images-container" class="images-container">
+		        <?php foreach( $images as $i => $img ): ?>
+		          <div class="img-container p-absolute spacing-b-1" >
+		          	<img src="<?= $img['url']; ?>" />
+		          </div>
+		        <?php endforeach; ?>
+		      </div>
 	      </div>
-      </div>
-    <?php endif; ?>
+	    <?php endif;
+	  endif; ?>
 
 		<div id="header-container" class="container spacing-t-3 spacing-p-b-4">
 			<div id="header">
