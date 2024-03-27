@@ -625,20 +625,17 @@ img {
 
 #landing {
   background-color: black;
-  z-index: 1000;
-  top: 0;
+  overflow: hidden;
   -webkit-transition: all 0.5s 0.3s;
   -moz-transition: all 0.5s 0.3s;
   -ms-transition: all 0.5s 0.3s;
   -o-transition: all 0.5s 0.3s;
   transition: all 0.5s 0.3s; }
-  #landing.scroll-up {
-    top: -100vh;
-    overflow: hidden; }
   #landing #logo-landing {
     width: 100%;
     top: 45%;
     pointer-events: none;
+    z-index: 10000;
     -webkit-transition: all ease 0.3s 0.15s;
     -moz-transition: all ease 0.3s 0.15s;
     -ms-transition: all ease 0.3s 0.15s;
@@ -653,29 +650,32 @@ img {
       -o-transition: all 0.25s;
       transition: all 0.25s; }
     #landing #logo-landing.scroll-up {
-      top: -20%; }
+      top: -10vh; }
       #landing #logo-landing.scroll-up svg {
         width: 33%; }
   #landing .images-container {
     min-height: 100vh;
     height: 100%;
-    overflow: scroll;
+    width: 100%;
+    top: 0;
+    left: 0;
     -ms-overflow-style: none;
-    scrollbar-width: none; }
+    scrollbar-width: none;
+    z-index: 1000; }
     #landing .images-container .img-container {
       height: 100vh;
       display: flex;
       align-items: center;
+      top: 0;
       left: 0;
-      transform: scale(0);
-      -webkit-transition: all 0.5s;
-      -moz-transition: all 0.5s;
-      -ms-transition: all 0.5s;
-      -o-transition: all 0.5s;
-      transition: all 0.5s; }
-      #landing .images-container .img-container.zoom {
-        transform: scale(2.5); }
-      #landing .images-container .img-container:nth-of-type(n+2) {
+      opacity: 0;
+      filter: blur(15px);
+      -webkit-transition: opacity 0.5s;
+      -moz-transition: opacity 0.5s;
+      -ms-transition: opacity 0.5s;
+      -o-transition: opacity 0.5s;
+      transition: opacity 0.5s; }
+      #landing .images-container .img-container:nth-of-type(even) {
         right: 0;
         left: unset; }
       #landing .images-container .img-container img {

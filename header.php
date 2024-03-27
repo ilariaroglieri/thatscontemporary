@@ -44,21 +44,20 @@
 	    $images = get_field('landing_gallery'); 
 
 	    if ($images): ?>
-	      <div id="landing" class="container-fluid p-fixed full-height t-center">
+	      <div id="landing" class="container-fluid t-center">
 	        <div id="logo-landing" class="p-fixed">
 	          <?php include('assets/img/thats_contemporary_logo.svg'); ?>
 	        </div>
 
-	        <div id="images-container" class="images-container">
+	        <div id="images-container" class="images-container p-fixed">
 		        <?php foreach( $images as $i => $img ): ?>
-		          <div class="img-container p-absolute spacing-b-1" >
+		          <div class="img-container p-fixed spacing-b-1" >
 		          	<img src="<?= $img['url']; ?>" />
 		          </div>
 		        <?php endforeach; ?>
 		      </div>
 	      </div>
 
-	      <div id="filler"></div>
 	    <?php endif;
 	  endif; ?>
 
