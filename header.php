@@ -43,11 +43,7 @@
 		if (is_front_page()):
 	    $images = get_field('landing_gallery'); 
 
-	    if ($images): 
-	    	$n = [1,2,3];
-        shuffle($n);
-
-	    	?>
+	    if ($images): ?>
 	      <div id="landing" class="container-fluid p-fixed full-height t-center">
 	        <div id="logo-landing" class="p-fixed">
 	          <?php include('assets/img/thats_contemporary_logo.svg'); ?>
@@ -61,6 +57,8 @@
 		        <?php endforeach; ?>
 		      </div>
 	      </div>
+
+	      <div id="filler"></div>
 	    <?php endif;
 	  endif; ?>
 

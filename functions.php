@@ -17,18 +17,13 @@ add_action( 'init', 'register_my_menu' );
 
 
 // enqueue scripts
-function scroll_scripts() {
-  wp_enqueue_script( 'gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array(), '1.0.0', true );
-  wp_enqueue_script( 'gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', array(), '1.0.0', true );
-  wp_enqueue_script( 'lenis', 'https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js', array(), '1.0.0', true );
-}
-
-if (is_front_page()) {
-  add_action( 'wp_enqueue_scripts', 'scroll_scripts' );
-}
-
-
 function jquery_scripts() {
+  // if (is_front_page()) {
+  //   wp_enqueue_script( 'gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array(), '1.0.0', true );
+  //   wp_enqueue_script( 'gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', array(), '1.0.0', true );
+  //   wp_enqueue_script( 'lenis', 'https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js', array(), '1.0.0', true );
+  //   wp_enqueue_script( 'tunnel', get_stylesheet_directory_uri() . '/assets/js/tunnelLanding.js', array(), '1.0.0', true );
+  // }
 	wp_enqueue_style( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
   wp_enqueue_script( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '1.0.0', true );
 

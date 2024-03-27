@@ -5,9 +5,20 @@ function viewportToPixels(value) {
   return side * (q/100)
 }
 
-function checkScroll() {
+function imageZoom(img, perc) {
+  var h = window.innerHeight;
+}
+
+function createRemap(inMin, inMax, outMin, outMax) {
+  return function remaper(x) {
+      return (x - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+  };
+}
+
+function scrollEvents() {
   var scr = $(window).scrollTop();
   var vh = Math.round(window.innerHeight / 100);
+  var h = window.innerHeight;
 
   var tunnelimgs = $('.img-container').length;
   var tempH = 100*tunnelimgs + 'vh';
@@ -16,10 +27,32 @@ function checkScroll() {
   if(scr >= (tunnelEnd - 200)) {
     $('#logo-landing').addClass('scroll-up');
     $('#landing').addClass('scroll-up');
+    $('#club-thats, #site-menu').removeClass('hidden');
   } else {
     $('#logo-landing').removeClass('scroll-up');
     $('#landing').removeClass('scroll-up');
+    $('#club-thats, #site-menu').addClass('hidden');
   }
+
+  $('.img-container').each(function(i, el) {
+    var start = h*i;
+    var step = (h/2)*i;
+    var perc = createRemap(start, start + h, 0,3); 
+    var perc0 = createRemap(start, start + h, 0,1.5); 
+    if (scr >= start) {
+      
+      $(el).css('transform', 'scale('+perc(scr)+')');
+      $(el).css('opacity', perc0(scr));
+
+      if (perc(scr) > 3) {
+        $(el).css('transform', 'scale(3)');
+        $(el).css('opacity', '0');
+      }
+
+    } else if (scr == 0) {
+      $(el).css('opacity', '0');
+    }
+  })
 
 }
 
@@ -30,25 +63,31 @@ jQuery(document).ready(function($) {
   // scroll events
   $(window).scroll(function() {
 
-    checkScroll();
+    scrollEvents();
 
   });
 
-  checkScroll();
+  scrollEvents();
 
   // tunnel effect slider home
   if ($('body').hasClass('home')) {
     var tunnelimgs = $('.img-container').length;
     var tempH = (100*tunnelimgs) + 'vh';
-    $('.content').css('margin-top', tempH );
+    $('#filler').css('height', tempH );
   }
 
-
+  // window.scrollTo({ top: $(window).innerHeight(), behavior: 'smooth' });
 
   // --- Hamburger menu
   $('.menu-toggle').click(function() {
     $(this).toggleClass('open');
     $('div[class*="menu-1"]').toggleClass('active');
+
+    // if ($(this).hasClass('open') == true) {
+    // 	$('#logo').addClass('visible');
+    // } else {
+    // 	$('#logo').removeClass('visible');
+    // }
   });
 
   // --- stacked galleries

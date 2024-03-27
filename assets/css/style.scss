@@ -317,9 +317,10 @@ img {
   background-color: black;
   z-index: 1000;
   top: 0;
-  @include transition(all .5s);
+  @include transition(all .5s .3s);
   &.scroll-up {
     top: -100vh;
+    overflow: hidden;
   }
   #logo-landing {
     width: 100%;
@@ -351,6 +352,9 @@ img {
       left: 0;
       transform: scale(0);
       @include transition(all .5s);
+      &.zoom {
+        transform: scale(2.5);
+      }
       &:nth-of-type(n+2) {
         right: 0;
         left: unset;
@@ -507,9 +511,7 @@ img {
 }
 
 // homepage
-.home .content {
-  margin-top: 100vh;
-}
+
 
 // notebook
 #article-header {

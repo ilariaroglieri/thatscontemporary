@@ -627,13 +627,14 @@ img {
   background-color: black;
   z-index: 1000;
   top: 0;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s; }
+  -webkit-transition: all 0.5s 0.3s;
+  -moz-transition: all 0.5s 0.3s;
+  -ms-transition: all 0.5s 0.3s;
+  -o-transition: all 0.5s 0.3s;
+  transition: all 0.5s 0.3s; }
   #landing.scroll-up {
-    top: -100vh; }
+    top: -100vh;
+    overflow: hidden; }
   #landing #logo-landing {
     width: 100%;
     top: 45%;
@@ -672,6 +673,8 @@ img {
       -ms-transition: all 0.5s;
       -o-transition: all 0.5s;
       transition: all 0.5s; }
+      #landing .images-container .img-container.zoom {
+        transform: scale(2.5); }
       #landing .images-container .img-container:nth-of-type(n+2) {
         right: 0;
         left: unset; }
@@ -808,9 +811,6 @@ img {
 .content {
   min-height: 100vh;
   margin-bottom: 120px; }
-
-.home .content {
-  margin-top: 100vh; }
 
 body.page-notebook #article-header .dot-link {
   display: inline-block !important; }
