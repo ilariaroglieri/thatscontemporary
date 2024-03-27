@@ -23,12 +23,15 @@ function scrollEvents() {
   var tunnelimgs = $('.img-container').length;
   var tempH = 100*tunnelimgs + 'vh';
   var tunnelEnd = viewportToPixels(tempH);
+  var header = $('#header-container').offset().top;
  
   if(scr >= (tunnelEnd)) {
     $('#logo-landing').addClass('scroll-up');
     $('#club-thats, #site-menu').removeClass('hidden');
     $('.img-container').css('opacity', 0);
-  } else {
+    window.scrollTo(0, header);
+    $('body').addClass('blocked');
+  } else if (scr < (tunnelEnd)) {
     $('#logo-landing').removeClass('scroll-up');
     $('#club-thats, #site-menu').addClass('hidden');
   }

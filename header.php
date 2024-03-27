@@ -61,7 +61,7 @@
 	    <?php endif;
 	  endif; ?>
 
-		<div id="header-container" class="container spacing-t-3 spacing-p-b-4">
+		<div id="header-container" class="container spacing-t-3 spacing-p-b-3">
 			<div id="header">
 				<div id="logo">
 					<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">

@@ -344,6 +344,7 @@ img {
     -ms-overflow-style: none;
     scrollbar-width: none;
     z-index: 1000;
+    pointer-events: none;
     .img-container {
       height: 100vh;
       display: flex;
@@ -352,6 +353,7 @@ img {
       left: 0;
       opacity: 0;
       filter: blur(15px);
+      pointer-events: none;
       @include transition(all ease .7s);
       &:nth-of-type(even) {
         right: 0;
@@ -366,7 +368,7 @@ img {
 }
 
 #header-container {
-  margin-top: calc(1.3vw + #{$half-spacing});
+  padding-top: calc(1.3vw + #{$half-spacing});
   position: relative;
   &.single-project {
     background-color: white;
@@ -509,7 +511,18 @@ img {
 }
 
 // homepage
-
+.smooth-scroll {
+  scroll-snap-type: y mandatory;
+  max-height: calc(100vh - 8.3vh - 68px);
+  overflow-y: scroll;
+  margin-bottom: 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.home-row {
+  scroll-snap-align: start;
+  height: calc(100vh - 8.3vh - 68px);
+}
 
 // notebook
 #article-header {
