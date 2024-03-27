@@ -38,7 +38,7 @@ function scrollEvents() {
     var step = (h/2)*i;
     var perc = createRemap(start, start + h, 0, 1.5); 
     var perc0 = createRemap(start, start + h, 0, 1.5); 
-    var percB = createRemap(start, start + h, 15,-10); 
+    var percB = createRemap(start, start + h, 15,-5); 
     if (scr >= start && scr < tunnelEnd) {
       
       $(el).css('transform', 'scale('+perc(scr)+')');

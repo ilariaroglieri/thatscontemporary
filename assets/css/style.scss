@@ -352,7 +352,7 @@ img {
       left: 0;
       opacity: 0;
       filter: blur(15px);
-      @include transition(opacity .5s);
+      @include transition(all ease .7s);
       &:nth-of-type(even) {
         right: 0;
         left: unset;
