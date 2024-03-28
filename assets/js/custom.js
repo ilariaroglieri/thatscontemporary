@@ -23,17 +23,25 @@ function scrollEvents() {
   var tunnelimgs = $('.img-container').length;
   var tempH = 100*tunnelimgs + 'vh';
   var tunnelEnd = viewportToPixels(tempH);
-  var header = $('#header-container').offset().top;
- 
-  if(scr >= (tunnelEnd)) {
+  console.log(tunnelEnd + h, scr);
+
+  if (scr >= (tunnelEnd)) {
     $('#logo-landing').addClass('scroll-up');
     $('#club-thats, #site-menu').removeClass('hidden');
     $('.img-container').css('opacity', 0);
-    window.scrollTo(0, header);
-    $('body').addClass('blocked');
   } else if (scr < (tunnelEnd)) {
     $('#logo-landing').removeClass('scroll-up');
     $('#club-thats, #site-menu').addClass('hidden');
+  }
+
+  if (scr >= (tunnelEnd + h)) {
+    $('#header-container, #content-home').addClass('p-fixed');
+    $('.cta-container').addClass('snap');
+    // $('body').addClass('blocked');
+    
+  } else if (scr < (tunnelEnd + h) ) {
+    $('#header-container, #content-home').removeClass('p-fixed');
+    $('.cta-container').removeClass('snap');
   }
 
   $('.img-container').each(function(i, el) {
@@ -63,20 +71,26 @@ function scrollEvents() {
 
 jQuery(document).ready(function($) {
 
-  // scroll events
-  $(window).scroll(function() {
-
-    scrollEvents();
-
-  });
-
-  scrollEvents();
+  $('body').removeClass('loading');
 
   // tunnel effect slider home
   if ($('body').hasClass('home')) {
     var tunnelimgs = ($('.img-container').length)+1;
     var tempH = (100*tunnelimgs) + 'vh';
     $('#landing').css('height', tempH );
+
+    // scroll events
+    $(window).scroll(function() {
+      scrollEvents();
+
+      $('.snap').on('scroll', function() {
+        if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+          // $(this).removeClass('snap');
+        }
+      })
+    });
+
+    scrollEvents();
   }
 
   // window.scrollTo({ top: $(window).innerHeight(), behavior: 'smooth' });

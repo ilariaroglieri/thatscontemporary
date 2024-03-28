@@ -27,11 +27,8 @@
 	
 	</head>
 
-	<?php 
-		$hidden = is_front_page() ? 'hidden' : '';
-		$isLanding = is_front_page() ? 'landing' : '';
-	?>
-	<body <?php body_class($isLanding); ?>>
+
+	<body <?php body_class('loading'); ?>>
 
 		<div id="club-thats" class="p-fixed <?= $hidden; ?>">
 			<a class="serif s-small italic uppercase" href="<?php echo get_page_link(16); ?>">

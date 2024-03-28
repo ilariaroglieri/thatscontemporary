@@ -1,12 +1,12 @@
-	<div id="footer-title" class="border-top border-bottom spacing-p-t-4 t-center">
-    <h2>
-    	<a class="s-xhuge uppercase serif italic" href="<?php echo get_page_link(16); ?>">
-				<?php echo get_the_title(16); ?>
-			</a>
-    </h2>
-  </div>
 
 	<div id="footer">
+		<div id="footer-title" class="border-top border-bottom spacing-p-t-4 spacing-b-4 t-center">
+	    <h2>
+	    	<a class="s-xhuge uppercase serif italic" href="<?php echo get_page_link(16); ?>">
+					<?php echo get_the_title(16); ?>
+				</a>
+	    </h2>
+	  </div>
 		<div class="container">
 			<div class="flex-row d-flex t-wrap">
 				<div class="d-three-twelfth t-half m-whole">

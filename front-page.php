@@ -3,7 +3,7 @@
 
 <section class="content" id="content-home">
   <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>    
-    <div class="container smooth-scroll">
+    <div class="container cta-container">
       <div class="d-flex flex-row home-row">
         <div class="d-two-twelfth t-hidden"></div>
         <div class="d-eight-twelfth t-whole d-flex d-column">
@@ -49,7 +49,7 @@
               </div>
             </div>
 
-          <?php endif; ?>
+          <?php wp_reset_postdata(); endif; ?>
 
         <?php elseif( get_row_layout() == 'download' ): 
             $file = get_sub_field('file');
@@ -62,7 +62,8 @@
     
   </div>  
 
-
 </section>
+
+<div class="ghost full-height"></div>
 
 <?php get_footer(); ?>

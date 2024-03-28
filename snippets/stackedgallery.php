@@ -2,7 +2,7 @@
 $images = get_field('stacked_gallery'); 
 
 if( $images ): ?>
-  <div class="stacked_gallery spacing-t-4 reveal-child">
+  <div class="stacked_gallery spacing-t-4">
     <?php foreach( $images as $i => $image ): ?>
       <?php 
         list($width, $height) = getimagesize($image['url']);
