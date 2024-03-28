@@ -843,11 +843,16 @@ img {
 
 .cta-container {
   -ms-overflow-style: none;
-  scrollbar-width: none; }
-  .cta-container.snap {
-    scroll-snap-type: y mandatory;
-    max-height: calc(100vh - 8.3vh - 68px);
-    overflow-y: scroll; }
+  scrollbar-width: none;
+  scroll-snap-type: y mandatory;
+  max-height: calc(100vh - 8.3vh - 68px);
+  overflow-y: scroll;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0 40px;
+  width: 100%; }
+  .cta-container.contain {
+    overscroll-behavior: contain; }
 
 .home-row {
   scroll-snap-align: start;

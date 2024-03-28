@@ -36,12 +36,11 @@ function scrollEvents() {
 
   if (scr >= (tunnelEnd + h)) {
     $('#header-container, #content-home').addClass('p-fixed');
-    $('.cta-container').addClass('snap');
-    // $('body').addClass('blocked');
+    // $('.cta-container').addClass('contain');
     
   } else if (scr < (tunnelEnd + h) ) {
     $('#header-container, #content-home').removeClass('p-fixed');
-    $('.cta-container').removeClass('snap');
+    // $('.cta-container').removeClass('contain');
   }
 
   $('.img-container').each(function(i, el) {
@@ -49,7 +48,7 @@ function scrollEvents() {
     var step = (h/2)*i;
     var perc = createRemap(start, start + h, 0, 1.5); 
     var perc0 = createRemap(start, start + h, 0, 1.5); 
-    var percB = createRemap(start, start + h, 15,-5); 
+    var percB = createRemap(start, start + h, 15,-2); 
     if (scr >= start && scr < tunnelEnd) {
       
       $(el).css('transform', 'scale('+perc(scr)+')');
@@ -85,7 +84,9 @@ jQuery(document).ready(function($) {
 
       $('.snap').on('scroll', function() {
         if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
-          // $(this).removeClass('snap');
+          $(this).removeClass('contain');
+        } else {
+          $(this).addClass('contain');
         }
       })
     });

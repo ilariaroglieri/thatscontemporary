@@ -542,10 +542,15 @@ img {
 .cta-container {
   -ms-overflow-style: none;
   scrollbar-width: none;
-  &.snap {
-    scroll-snap-type: y mandatory;
-    max-height: calc(100vh - 8.3vh - 68px);
-    overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  max-height: calc(100vh - 8.3vh - 68px);
+  overflow-y: scroll;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0 $double-spacing;
+  width: 100%;
+  &.contain {
+    overscroll-behavior: contain;
   }
 }
 .home-row {
