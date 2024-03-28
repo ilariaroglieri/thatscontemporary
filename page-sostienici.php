@@ -77,7 +77,7 @@
         </div>
 
         <div class="border-top">
-          <div class="flex-row d-flex">
+          <div class="d-flex">
             <div class="donation-button active d-half s-small t-center" data-tab="paypal">
               <h3 class="s-xsmall light uppercase"><?= $singola['titolo_donazione_paypal']; ?></h3>
             </div>

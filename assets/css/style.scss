@@ -667,10 +667,15 @@ img {
     background-color: $color2;
     max-width: 12vw;
   }
+  .dot-link {
+    width: 50%;
+  }
 }
 
 .dot-link {
   position: relative;
+  margin-left: $half-spacing;
+  margin-right: $half-spacing;
   &:after {
     content:'';
     display: block;
@@ -926,7 +931,7 @@ img {
   }
   .donation-tab {
     position: relative;
-    aspect-ratio: 4/1;
+    aspect-ratio: 3/1;
     .donation-text {
       opacity: 0;
       position: absolute;
@@ -950,20 +955,23 @@ img {
   .donation-button {
     cursor: pointer;
     position: relative;
-    padding: 3px 0;
+    padding: 3px $half-spacing;
+    margin: 0;
+    width: 100%;
     @include transition(all .3s);
     &:hover {
       color: $color3;
     }
     &.active {
       color: $color3;
+      background-color: #cecece;
       cursor: default;
     }
     &:nth-of-type(1):after {
       content: '';
       position: absolute;
       top: 0;
-      right: -$half-spacing;
+      right: 0;
       width: 1px;
       height: 100%;
       background-color: $color1;
@@ -1024,6 +1032,9 @@ img {
     display: none;
   }
 }
+#benefits {
+  margin-bottom: 200px;
+}
 .single-benefit {
   position: relative;
   .benefit-title {
@@ -1060,6 +1071,7 @@ img {
 
 .dot-before {
   display: flex;
+  align-items: center;
   & > * {
     width: calc(100% - 40px);
   }
@@ -1091,6 +1103,12 @@ img {
 }
 
 
+#footer-title {
+  background-color: #DEF5E1;
+  a {
+    color: $color1;
+  }
+}
 #footer {
   position: relative;
   background-color: $color1;
@@ -1102,12 +1120,6 @@ img {
   }
   a {
     color: white;
-  }
-  #footer-title {
-    background-color: #DEF5E1;
-    a {
-      color: $color1;
-    }
   }
   #logo-footer {
     display: inline-block;

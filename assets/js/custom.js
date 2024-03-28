@@ -23,7 +23,6 @@ function scrollEvents() {
   var tunnelimgs = $('.img-container').length;
   var tempH = 100*tunnelimgs + 'vh';
   var tunnelEnd = viewportToPixels(tempH);
-  console.log(tunnelEnd + h, scr);
 
   if (scr >= (tunnelEnd)) {
     $('#logo-landing').addClass('scroll-up');

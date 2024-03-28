@@ -28,7 +28,7 @@
 	</head>
 
 
-	<body <?php body_class(); ?>>
+	<body <?php body_class('loading'); ?>>
 
 		<div id="club-thats" class="p-fixed">
 			<a class="serif s-small italic uppercase" href="<?php echo get_page_link(16); ?>">

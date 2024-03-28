@@ -946,9 +946,13 @@ body.page-notebook #article-header .dot-link {
   #content-single-media .button {
     background-color: #8df2A8;
     max-width: 12vw; }
+  #content-single-media .dot-link {
+    width: 50%; }
 
 .dot-link {
-  position: relative; }
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px; }
   .dot-link:after {
     content: '';
     display: block;
@@ -1156,7 +1160,7 @@ body.page-notebook #article-header .dot-link {
       left: -65px; }
   .donations .donation-tab {
     position: relative;
-    aspect-ratio: 4/1; }
+    aspect-ratio: 3/1; }
     .donations .donation-tab .donation-text {
       opacity: 0;
       position: absolute;
@@ -1180,7 +1184,9 @@ body.page-notebook #article-header .dot-link {
   .donations .donation-button {
     cursor: pointer;
     position: relative;
-    padding: 3px 0;
+    padding: 3px 10px;
+    margin: 0;
+    width: 100%;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
@@ -1190,12 +1196,13 @@ body.page-notebook #article-header .dot-link {
       color: #be0dbd; }
     .donations .donation-button.active {
       color: #be0dbd;
+      background-color: #cecece;
       cursor: default; }
     .donations .donation-button:nth-of-type(1):after {
       content: '';
       position: absolute;
       top: 0;
-      right: -10px;
+      right: 0;
       width: 1px;
       height: 100%;
       background-color: #3D374A; }
@@ -1237,6 +1244,9 @@ body.page-notebook #article-header .dot-link {
   .page-id-16.page-club-thats #club-thats, .page-id-16.page-club-thats #footer-title {
     display: none; }
 
+#benefits {
+  margin-bottom: 200px; }
+
 .single-benefit {
   position: relative; }
   .single-benefit .benefit-title {
@@ -1273,7 +1283,8 @@ body.page-notebook #article-header .dot-link {
       height: 100%; }
 
 .dot-before {
-  display: flex; }
+  display: flex;
+  align-items: center; }
   .dot-before > * {
     width: calc(100% - 40px); }
   .dot-before:before {
@@ -1302,6 +1313,11 @@ body.page-notebook #article-header .dot-link {
     background-repeat: no-repeat;
     background-position: center; }
 
+#footer-title {
+  background-color: #DEF5E1; }
+  #footer-title a {
+    color: #3D374A; }
+
 #footer {
   position: relative;
   background-color: #3D374A;
@@ -1312,10 +1328,6 @@ body.page-notebook #article-header .dot-link {
     top: 100vh; }
   #footer a {
     color: white; }
-  #footer #footer-title {
-    background-color: #DEF5E1; }
-    #footer #footer-title a {
-      color: #3D374A; }
   #footer #logo-footer {
     display: inline-block;
     width: 100%; }

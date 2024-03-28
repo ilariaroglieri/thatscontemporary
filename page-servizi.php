@@ -17,7 +17,7 @@
 
         <?php include('snippets/benefit-list.php'); ?>
 
-        <div class="d-flex flex-row spacing-t-8">
+        <div class="d-flex flex-row spacing-t-12">
           <div class="d-whole t-center">
             <h2 class="serif italic s-medium uppercase"><?php _e("I nostri servizi", 'thats-theme'); ?></h2>
           </div>
