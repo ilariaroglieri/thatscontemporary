@@ -28,9 +28,9 @@
 	</head>
 
 
-	<body <?php body_class('loading'); ?>>
+	<body <?php body_class(); ?>>
 
-		<div id="club-thats" class="p-fixed <?= $hidden; ?>">
+		<div id="club-thats" class="p-fixed">
 			<a class="serif s-small italic uppercase" href="<?php echo get_page_link(16); ?>">
 				<?php _e("Unisciti alla community, iscriviti al Club That's!", 'thats-theme'); ?>
 			</a>

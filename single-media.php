@@ -1,7 +1,8 @@
-/*
+<!-- 
 Template Name: Media
-Template Post Type: post
-*/
+Template Post Type: post 
+-->
+
 
 <?php get_header(); ?>
 

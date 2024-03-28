@@ -829,35 +829,26 @@ img {
   min-height: 100vh;
   margin-bottom: 120px; }
 
-.home #header-container {
-  top: 0;
-  background-color: white;
-  margin: 0;
-  padding-left: 40px;
-  padding-right: 40px;
-  width: 100%; }
-  .home #header-container.p-fixed {
-    position: fixed; }
-
-#content-home {
-  top: 10vh;
-  background-color: white;
-  margin-bottom: 0; }
-
-.cta-container {
-  scroll-snap-type: y mandatory;
-  max-height: calc(100vh - 8.3vh - 68px);
-  overflow-y: scroll;
-  margin-right: 0;
-  margin-left: 0;
-  padding: 0 40px;
-  width: 100%; }
-  .cta-container.contain {
-    overscroll-behavior: contain; }
-
 .home-row {
-  scroll-snap-align: start;
   height: calc(100vh - 8.3vh - 68px); }
+  .home-row .title {
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    -ms-transition: color 0.3s;
+    -o-transition: color 0.3s;
+    transition: color 0.3s; }
+  .home-row .img {
+    background-size: 100%;
+    background-position: center;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s; }
+  .home-row .overall:hover + .flex-row .title {
+    color: #be0dbd; }
+  .home-row .overall:hover ~ .flex-row .img {
+    background-size: 110%; }
 
 body.page-notebook #article-header .dot-link {
   display: inline-block !important; }
@@ -1055,7 +1046,7 @@ body.page-notebook #article-header .dot-link {
   -o-transition: opacity 0.3s 0.3s;
   transition: opacity 0.3s 0.3s; }
   #info-section .team.box .team-profile .team-img {
-    aspect-ratio: 1/1.5;
+    aspect-ratio: 1/1.25;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center; }

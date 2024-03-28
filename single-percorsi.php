@@ -1,7 +1,8 @@
-/*
+<!-- 
 Template Name: Percorsi
-Template Post Type: post
-*/
+Template Post Type: post 
+-->
+
 
 <?php get_header(); ?>
 
@@ -65,10 +66,10 @@ Template Post Type: post
         <?php
         $surrounding_places = get_field('surrounding_places');
         if( $surrounding_places ): ?>
-          <div id="article_surrounding_places" class="spacing-t-4 reveal-module">
+          <div id="article_surrounding_places" class="spacing-t-8 reveal-module">
             <div class="d-flex flex-row">
               <div class="d-two-thirds m-whole reveal-child">
-                <div class="wysiwyg light s-big uppercase"><?php the_field('surroundings_text'); ?></div>
+                <div class="wysiwyg light s-large uppercase"><?php the_field('surroundings_text'); ?></div>
               </div>
             </div>
 

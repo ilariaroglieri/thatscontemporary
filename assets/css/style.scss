@@ -525,40 +525,22 @@ img {
   margin-bottom: $double-spacing*3;
 }
 
-// homepage
-.home {
-  #header-container {
-    top: 0;
-    background-color: white;
-    margin: 0;
-    padding-left: $double-spacing;
-    padding-right: $double-spacing;
-    width: 100%;
-    &.p-fixed {
-      position: fixed;
-    }
-  }
-}
-#content-home {
-  top: 10vh;
-  background-color: white;
-  margin-bottom: 0;
-}
-.cta-container {
-  scroll-snap-type: y mandatory;
-  max-height: calc(100vh - 8.3vh - 68px);
-  overflow-y: scroll;
-  margin-right: 0;
-  margin-left: 0;
-  padding: 0 $double-spacing;
-  width: 100%;
-  &.contain {
-    overscroll-behavior: contain;
-  }
-}
 .home-row {
-  scroll-snap-align: start;
   height: calc(100vh - 8.3vh - 68px);
+  .title {
+    @include transition(color .3s);
+  }
+  .img {
+    background-size: 100%;
+    background-position: center;
+    @include transition(all .5s);
+  }
+  .overall:hover + .flex-row .title {
+    color: $color3;
+  }
+  .overall:hover ~ .flex-row .img {
+    background-size: 110%;
+  }
 }
 
 // notebook
@@ -804,7 +786,7 @@ img {
       pointer-events: none;
       @include transition(opacity .3s .3s);
       .team-img {
-        aspect-ratio: 1/1.5;
+        aspect-ratio: 1/1.25;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;

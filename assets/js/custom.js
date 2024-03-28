@@ -34,15 +34,6 @@ function scrollEvents() {
     $('#club-thats, #site-menu').addClass('hidden');
   }
 
-  if (scr >= (tunnelEnd + h)) {
-    $('#header-container, #content-home').addClass('p-fixed');
-    // $('.cta-container').addClass('contain');
-    
-  } else if (scr < (tunnelEnd + h) ) {
-    $('#header-container, #content-home').removeClass('p-fixed');
-    // $('.cta-container').removeClass('contain');
-  }
-
   $('.img-container').each(function(i, el) {
     var start = h*i;
     var step = (h/2)*i;
@@ -81,14 +72,6 @@ jQuery(document).ready(function($) {
     // scroll events
     $(window).scroll(function() {
       scrollEvents();
-
-      $('.snap').on('scroll', function() {
-        if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
-          $(this).removeClass('contain');
-        } else {
-          $(this).addClass('contain');
-        }
-      })
     });
 
     scrollEvents();
@@ -138,22 +121,23 @@ jQuery(document).ready(function($) {
     speed: 2000,
     touchEventsTarget: 'container-fluid',
     grabCursor: true,
+    breakpoints: {
     autoplay: {
       delay: 2000,
     },
-    breakpoints: {
       768: {
         slidesPerView: "auto",
         centeredSlides: true,
+        autoplay: {
+          enabled: false
+        }
       }
     },
   });
 
   // ajax filter
   $(document).on('click','.cat-item, .tag-item', function() {
-    // var tax = $(this).attr('data-type');
 
-    // $('a[data-type='+ tax + ']').removeClass('active');
     $(this).toggleClass('active');
 
     var catTerm = $('a[data-type="category"].active');
@@ -169,9 +153,6 @@ jQuery(document).ready(function($) {
     for (var i = 0; i < tagTerm.length; i++) {
       tagTerms.push($(tagTerm[i]).data('id'));
     }
-
-    console.log(catTerms, tagTerms);
-
 
     $.ajax({
       type: 'POST',
@@ -230,8 +211,8 @@ jQuery(document).ready(function($) {
   ScrollReveal().reveal('.reveal-module', { 
     interval: 150, 
     duration: 600,
-    reset: true,
-    afterReveal: ScrollReveal().reveal('.reveal-child', { interval: 150, duration: 300, reset: true, distance: '50px'})
+    reset: false,
+    afterReveal: ScrollReveal().reveal('.reveal-child', { interval: 150, duration: 300, reset: false, distance: '50px'})
   });
 
 

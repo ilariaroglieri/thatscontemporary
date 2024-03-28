@@ -52,7 +52,7 @@
       <div class="donations container border-top spacing-b-4 reveal-module">
         <div class="flex-row d-flex spacing-p-t-2 spacing-p-b-2">
           <div class="d-five-twelfth t-whole reveal-child">
-            <h2 class="donation-title s-large uppercase"><?= $singola['donazione_singola_-_titolo_sezione']; ?></h2>
+            <h2 class="donation-title s-large light uppercase"><?= $singola['donazione_singola_-_titolo_sezione']; ?></h2>
           </div>
 
           <div class="donation-tab d-seven-twelfth t-whole reveal-child">
@@ -91,7 +91,7 @@
       <div class="donations container border-top spacing-t-4 spacing-b-4 reveal-module">
         <div class="flex-row d-flex spacing-p-t-2 spacing-p-b-2">
           <div class="d-five-twelfth t-whole reveal-child">
-            <h2 class="donation-title s-large uppercase"><?= $partnership['titolo_donazione_partner']; ?></h2>
+            <h2 class="donation-title s-large light uppercase"><?= $partnership['titolo_donazione_partner']; ?></h2>
           </div>
 
           <div class="donation-tab d-seven-twelfth t-whole">

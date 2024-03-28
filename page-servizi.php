@@ -49,7 +49,7 @@
           <?php $help = get_field('help_row'); ?>
 
           <div class="d-five-twelfth t-half m-whole">
-            <div class="dot-before"><h3 class="s-large uppercase"><?= $help['help_text']; ?></h3></div>
+            <div class="dot-before"><h3 class="s-large light uppercase"><?= $help['help_text']; ?></h3></div>
           </div>
           <div class="d-five-twelfth t-hidden"></div>
 

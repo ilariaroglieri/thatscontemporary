@@ -43,7 +43,7 @@
 
               <div class="d-flex flex-row grow">
                 <div class="d-one-twelfth t-hidden"></div>
-                <div class="d-ten-twelfth t-whole spacing-b-2" style="background-image: url(<?= $img['url']; ?>)">
+                <div class="img d-ten-twelfth t-whole spacing-b-2" style="background-image: url(<?= $img['url']; ?>)">
                 </div>
                 <div class="d-one-twelfth t-hidden"></div>
               </div>
@@ -64,6 +64,5 @@
 
 </section>
 
-<div class="ghost full-height"></div>
 
 <?php get_footer(); ?>
