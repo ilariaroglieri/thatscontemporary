@@ -170,9 +170,9 @@ jQuery(document).ready(function($) {
   });
 
   // --- percorsi articles
-  $('.place-title').mouseenter(function() {
+  $('.place-text').mouseenter(function() {
     $('.place-img-container').removeClass('visible');
-    $(this).parent().parent().parent().find('.place-img-container').addClass('visible');
+    $(this).parent().parent().find('.place-img-container').addClass('visible');
   }).mouseleave(function() {
     $('.place-img-container').removeClass('visible');
   });

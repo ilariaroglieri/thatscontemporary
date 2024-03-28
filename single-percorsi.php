@@ -25,11 +25,18 @@ Template Post Type: post
         if( $featured_places ): ?>
           <div id="article_feat_places" class="spacing-t-4 reveal-module">
             <p class="uppercase medium s-xsmall"><?php _e("Take note dei luoghi d’arte da non perdere", 'thats-theme'); ?></p>
-            <?php foreach( $featured_places as $post ): setup_postdata($post); ?>
+            <?php foreach( $featured_places as $post ): setup_postdata($post); 
+              $link = get_field('external_link'); ?>
               <div class="d-flex flex-row t-column spacing-t-2 spacing-b-2 reveal-child">
                 <div class="d-seven-twelfth t-whole">
-                  <div class="wysiwyg uppercase s-large">
-                    <h2 class="place-title light d-inline-block f-left"><a class="color-hover underline" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                  <div class="place-text wysiwyg uppercase s-large">
+                    <h2 class="place-title light d-inline-block f-left">
+                      <?php if ($link): ?>
+                        <a class="color-hover underline" href="<?= $link; ?>"><?php the_title(); ?></a>
+                      <?php else: ?>
+                        <?php the_title(); ?>
+                      <?php endif; ?>
+                    </h2>
                     <?php the_content(); ?>
                   </div>
                 </div>

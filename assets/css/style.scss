@@ -525,6 +525,10 @@ img {
   margin-bottom: $double-spacing*3;
 }
 
+#content-home {
+  margin-bottom: 0;
+}
+
 .home-row {
   height: calc(100vh - 8.3vh - 68px);
   .title {
@@ -540,6 +544,22 @@ img {
   }
   .overall:hover ~ .flex-row .img {
     background-size: 110%;
+  }
+}
+
+.adv-row {
+  color: $color3;
+  width: 100vw;
+  margin-left: - $half-spacing*3;
+  background-color: #F1FCB3;
+  margin-top: -1px;
+  &.image-adv {
+    background-color: #cecece;
+    aspect-ratio: 5/1;
+    img {
+      height: 100%;
+      width: auto;
+    }
   }
 }
 
@@ -830,6 +850,9 @@ img {
 }
 
 // percorsi
+.place-text {
+  cursor: pointer;
+}
 .place-title {
   margin-right: 10px;
 }
@@ -1105,6 +1128,7 @@ img {
 
 #footer-title {
   background-color: #DEF5E1;
+  margin-top: -1px;
   a {
     color: $color1;
   }
