@@ -1,7 +1,7 @@
 // Commons
 
 //Breakpoint
-$desktop: 1440px;
+$desktop: 1024px;
 $tablet: 768px;
 $mobile: 640px;
 
@@ -95,12 +95,10 @@ $color3: #be0dbd;
   font-style: italic;
 }
 
-.s-large { 
-  font-size: 35px;
-}
 
 .s-xhuge {
   font-size: 125px;
+  font-size: 10vw;
 }
 
 .s-huge {
@@ -116,6 +114,11 @@ $color3: #be0dbd;
 .s-large {
   font-size: 40px;
   font-size: 2.4vw;
+}
+
+.s-large { 
+  font-size: 35px;
+  font-size: 2.1vw;
 }
 
 .s-medium { 

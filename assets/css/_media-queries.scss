@@ -1,6 +1,11 @@
 @media screen and (max-width: $desktop) {
+  .s-small {
+    font-size: 15px;
+  }
 
-
+  .s-xsmall, .s-xxsmall {
+    font-size: 13px;
+  }
 }
 
 @media screen and (max-width: $tablet) {
@@ -25,18 +30,38 @@
     width: calc(100% - #{$spacing});
     margin-left: #{$half-spacing};
     margin-right: #{$half-spacing};
-  }
+    margin-bottom: $spacing;
 
+  }
 
   .t-half {
     width: calc(50% - #{$spacing});
     margin-left: #{$half-spacing};
     margin-right: #{$half-spacing};
+    margin-bottom: $spacing;
   }
 
   .t-ten-twelfth {
     width: calc(#{$col}*10 - #{$spacing});
-    margin: 0 #{$half-spacing};
+    margin-left: #{$half-spacing};
+    margin-right: #{$half-spacing};
+    margin-bottom: $spacing;
+  }
+
+  // sostienici
+  .img-row {
+    .img-element {
+      max-width: 20%;
+    }
+  }
+
+  .donations {
+    .donation-tab {
+      aspect-ratio: 4/1;
+      .donation-text {
+        margin: 0 calc(5vw + #{$spacing});
+      }
+    }
   }
 }
 

@@ -10,7 +10,7 @@
       <div class="d-half t-whole">
         <h2 class="dot-before benefit-title uppercase s-large light color-hover spacing-b-2"><?= $title; ?></h2>
       </div>
-      <div class="benefit-content d-flex flex-row">
+      <div class="benefit-content d-flex flex-row spacing-t-1">
         <div class="d-half t-whole">
           <div class="wysiwyg serif s-small color3">
             <?= $text; ?>

@@ -32,7 +32,7 @@ Template Post Type: post
                   <div class="place-text wysiwyg uppercase s-large">
                     <h2 class="place-title light d-inline-block f-left">
                       <?php if ($link): ?>
-                        <a class="color-hover underline" href="<?= $link; ?>"><?php the_title(); ?></a>
+                        <a class="color-hover underline" href="<?= $link; ?>" target="_blank"><?php the_title(); ?></a>
                       <?php else: ?>
                         <?php the_title(); ?>
                       <?php endif; ?>

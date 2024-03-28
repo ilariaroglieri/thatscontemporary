@@ -99,7 +99,7 @@ Template Post Type: post
                 <div class="reveal-module info-container spacing-t-4">
                   <div class="d-flex flex-row m-column">
                     <div class="d-half m-whole reveal-child ">
-                      <p class="label short uppercase light s-xxsmall">Bio dell'autore</p>
+                      <p class="label short uppercase light s-xxsmall"><?php _e("Bio dell'autore", 'thats-theme'); ?></p>
 
                       <div class="wywiwyg s-xxsmall spacing-t-1">
                         <?= $text; ?>
