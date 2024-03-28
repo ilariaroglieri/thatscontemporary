@@ -27,7 +27,8 @@
             $post = $page;
             setup_postdata($post); ?>
 
-            <div class="home-row d-flex d-column">
+            <div class="home-row d-flex d-column p-relative">
+              <a class="p-absolute overall" href="<?= the_permalink(); ?>"></a>
               <div class="flex-row">
                 <?php include('snippets/hero-title.php'); ?>
               </div>
@@ -43,7 +44,6 @@
               <div class="d-flex flex-row grow">
                 <div class="d-one-twelfth t-hidden"></div>
                 <div class="d-ten-twelfth t-whole spacing-b-2" style="background-image: url(<?= $img['url']; ?>)">
-                  
                 </div>
                 <div class="d-one-twelfth t-hidden"></div>
               </div>

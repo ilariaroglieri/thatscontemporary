@@ -187,14 +187,21 @@ html.sr .reveal-child {
   visibility: hidden;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
+}
+
 body {
   @extend .sans;
   @extend .light;
   color: $color1;
   overflow-x: hidden;
   text-rendering: geometricPrecision;
-   -ms-overflow-style: none;
-  scrollbar-width: none;
   opacity: 1;
   @include transition(opacity .7s);
   &::-webkit-scrollbar {
@@ -351,8 +358,6 @@ img {
     width: 100%;
     top: 0;
     left: 0;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
     z-index: 1000;
     pointer-events: none;
     .img-container {
@@ -540,8 +545,6 @@ img {
   margin-bottom: 0;
 }
 .cta-container {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
   scroll-snap-type: y mandatory;
   max-height: calc(100vh - 8.3vh - 68px);
   overflow-y: scroll;
@@ -1001,8 +1004,6 @@ img {
   margin-left: $double-spacing;
   max-height: 75vh;
   overflow: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
   #project-txt {
     // height: 70vh;
     display: flex;
@@ -1016,8 +1017,6 @@ img {
   position: sticky;
   max-height: 75vh;
   overflow: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
 .overflow {

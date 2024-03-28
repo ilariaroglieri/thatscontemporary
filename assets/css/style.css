@@ -529,12 +529,17 @@ html.sr .reveal-module,
 html.sr .reveal-child {
   visibility: hidden; }
 
+*::-webkit-scrollbar {
+  display: none; }
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none; }
+
 body {
   color: #3D374A;
   overflow-x: hidden;
   text-rendering: geometricPrecision;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
   opacity: 1;
   -webkit-transition: opacity 0.7s;
   -moz-transition: opacity 0.7s;
@@ -671,8 +676,6 @@ img {
     width: 100%;
     top: 0;
     left: 0;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
     z-index: 1000;
     pointer-events: none; }
     #landing .images-container .img-container {
@@ -842,8 +845,6 @@ img {
   margin-bottom: 0; }
 
 .cta-container {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
   scroll-snap-type: y mandatory;
   max-height: calc(100vh - 8.3vh - 68px);
   overflow-y: scroll;
@@ -1218,9 +1219,7 @@ body.page-notebook #article-header .dot-link {
 .project-txts {
   margin-left: 40px;
   max-height: 75vh;
-  overflow: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none; }
+  overflow: scroll; }
   .project-txts #project-txt {
     display: flex;
     flex-flow: column;
@@ -1229,9 +1228,7 @@ body.page-notebook #article-header .dot-link {
 .sticky {
   position: sticky;
   max-height: 75vh;
-  overflow: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none; }
+  overflow: scroll; }
 
 .overflow .img-container {
   width: 100%;
